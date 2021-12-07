@@ -1,0 +1,865 @@
+body {
+    font-family: 'Cairo', sans-serif;
+}
+a{
+    text-decoration: none;
+}
+.navbar-toggler:focus,
+.form-control:focus{
+    border-color: #cacaca;
+    box-shadow: none;
+}
+/* Start Variables */
+:root {
+    --main-color: #2178b3;
+}
+/* End Variables */
+
+/* Start Loading */
+.lds-ripple {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 9999;
+    background: rgba(255, 255, 255, .9)
+}
+.lds-ripple div {
+    right: 0;
+    margin: auto;
+    bottom: 0;
+    position: absolute;
+    border: 4px solid var(--main-color);
+    opacity: 1;
+    border-radius: 50%;
+    animation: lds-ripple 1s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+}
+.lds-ripple div:nth-child(2) {
+    animation-delay: -0.5s;
+}
+@keyframes lds-ripple {
+    0% {
+        top: 0;
+        left: 0;
+        width: 0;
+        height: 0;
+        opacity: 1;
+    }
+    100% {
+        top: 0px;
+        left: 0px;
+        width: 72px;
+        height: 72px;
+        opacity: 0;
+    }
+}
+/* End Loading */
+/* Start Login Modal */
+.modal .btn-close{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 25px;
+    height: 25px;
+    left: 0;
+    right: 0;
+    top: -45px;
+    margin: auto;
+    border: 2px solid #fff;
+    color: #fff;
+    background: unset;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+.login-body{
+    display: none;
+}
+.login-logo img{
+    width: 150px;
+}
+.login-logo h3{
+    color: var(--main-color);
+    margin-top: 35px;
+    font-size: 34px;
+    font-weight: 600;
+}
+.login-form{
+    width: 500px;
+    margin: auto;
+}
+.login-form .login-input{
+    position: relative;
+}
+.login-form .login-input input{
+    text-align: left;
+    height: 55px;
+    border-radius: 30px;
+    padding-right: 50px;
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+    -ms-border-radius: 30px;
+    -o-border-radius: 30px;
+}
+.login-form .login-input input::placeholder{
+    text-align: right;
+}
+.login-form .login-input img{
+    width: 20px;
+    position: absolute;
+    right: 15px;
+    top: 30%;
+}
+.login-form input[type='submit']{
+    display: block;
+    width: 100%;
+    background: var(--main-color);
+    color: #fff;
+    padding: 12px;
+    margin-top: 35px;
+    font-size: 20px;
+    border: 0;
+    border-radius: 30px;
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+    -ms-border-radius: 30px;
+    -o-border-radius: 30px;
+}
+.login-form .fb-login .or{
+    font-weight: 500;
+}
+.login-form .fb-login{
+    display: block;
+    width: 100%;
+    background: #3b5998;
+    color: #e1e1e1;
+    padding: 12px;
+    font-size: 16px;
+    text-align: center;
+    border: 0;
+    border-radius: 30px;
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+    -ms-border-radius: 30px;
+    -o-border-radius: 30px;
+}
+.login-form .fb-login i{
+    font-size: 20px;
+    color: #fff;
+    margin-left: 15px;
+}
+.forget-pass{
+    color: #5f5f5f;
+    font-size: 14px;
+}
+.forget-pass a{
+    text-decoration: underline;
+    color: #5f5f5f;
+    font-weight: 700;
+}
+/* End Login Modal */
+/* Start Navbar */
+.navbar{
+    border-bottom: 1px solid #ccc;
+}
+.navbar .navbar-brand img{
+    width: 70px;
+}
+.navbar-light .navbar-nav .nav-link{
+    font-size: 18px;
+    font-weight: 600;
+    color: #1a1a1a;
+}
+.navbar .nav-link.register{
+    color: #fff;
+    border-radius: 25px;
+    padding: 7px 30px;
+    background: linear-gradient(90deg, #2182BF 0%, #1C4375 100%);
+}
+.navbar .nav-link.register:hover,
+.navbar .nav-link.register:focus{
+    color: #fff;
+}
+/* End Navbar */
+/* Start Header */
+.carousel-caption {
+    text-align: right;
+    position: absolute;
+    left: unset;
+    right: 5%;
+    padding-top: 1.25rem;
+    padding-bottom: 1.25rem;
+    color: #000;
+    top: 0;
+    bottom: 0;
+    justify-content: center;
+    flex-direction: column;
+    width: 40%;
+}
+.carousel-caption h5{
+    color: var(--main-color);
+    font-size: 48px;
+    font-weight: 700;
+    margin-bottom: 40px;
+    line-height: 1.4;
+}
+.carousel-caption p{
+    color: #555;
+    font-size: 18px;
+    line-height: 1.9;
+    font-weight: 600;
+}
+/* End Header */
+/* Start Blue Banner */
+.blue-banner{
+    background: linear-gradient(90deg, #2182BF 0%, #1C4375 100%);
+    padding-block: 70px;
+}
+.blue-banner p{
+    color: #fff;
+    line-height: 1.7;
+    font-size: 20px;
+    font-weight: 500;
+}
+/* End Blue Banner */
+/* Start About */
+.about{
+    padding: 80px 0;
+}
+.about a.video-link{
+    margin-top: 40px;
+    position: relative;
+    display: block;
+    width: 85%;
+    height: 450px;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+.about a.video-link:before{
+    content: "";
+    position: absolute;
+    top: -30px;
+    right: -30px;
+    width: 140px;
+    height: 140px;
+    background: #d7d7d7;
+    z-index: 0;
+}
+.about a.video-link:after{
+    content: "";
+    position: absolute;
+    bottom: -30px;
+    left: -30px;
+    width: 140px;
+    height: 140px;
+    background: #d7d7d7;
+    z-index: -1;
+}
+.about img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+.about .blob{
+    z-index: 9;
+    background: linear-gradient(90deg, #2182BF 0%, #1C4375 100%);
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+.about .blob i{
+    color: #fff;
+    font-size: 25px;
+}
+.about h2{
+    color: var(--main-color);
+    font-weight: 700;
+    margin-bottom: 25px;
+}
+.about p{
+    color: #747474;
+    line-height: 2;
+    font-size: 20px;
+}
+/* End About */
+/* Start deals */
+.deals{
+    padding: 80px 0;
+}
+.deals-head h3{
+    color: var(--main-color);
+    font-weight: 700;
+    font-size: 30px;
+    margin-bottom: 40px;
+    position: relative;
+}
+.deals-head h3:before{
+    content: "";
+    position: absolute;
+    right: 6px;
+    bottom: -20px;
+    height: 6px;
+    width: 55px;
+    background: linear-gradient(90deg, #2182BF 0%, #1C4375 100%);
+    border-radius: 10px;
+}
+.deals-head h3:after{
+    content: "";
+    position: absolute;
+    right: 65px;
+    bottom: -20px;
+    height: 6px;
+    width: 35px;
+    background: linear-gradient(90deg, #2182BF 0%, #1C4375 100%);
+    border-radius: 10px;
+}
+.deals-head h3 span:after{
+    content: "";
+    position: absolute;
+    right: 105px;
+    bottom: -20px;
+    height: 6px;
+    width: 15px;
+    background: linear-gradient(90deg, #2182BF 0%, #1C4375 100%);
+    border-radius: 10px;
+}
+/* .search-purchase-container{
+    position: relative;
+}
+.search-purchase-container input{
+    padding-left: 40px;
+    width: 500px;
+    border-radius: 25px;
+    padding-block: 10px;
+}
+.search-purchase-container i{
+    position: absolute;
+    top: 35%;
+    left: 25px;
+    color: #ccc;
+} */
+.deals-p .deals-boxes{
+    margin-top: 85px;
+}
+.deals-box{
+    border: 1px solid #ccc;
+    border-radius: 16px;
+    padding: 20px;
+}
+.deals-box img{
+    width: 100%;
+    height: 145px;
+    object-fit: cover;
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+    /* margin-left: 20px; */
+}
+.deals-box h5{
+    margin-top: 20px;
+    font-weight: 700;
+    font-size: 19px;
+    color: #6e6e6e;
+}
+.deals-box p{
+    font-weight: 600;
+    color: #aaaaaa;
+    margin-top: 12px;
+    line-height: 1.7;
+}
+.deals-box span{
+    color: var(--main-color);
+    font-size: 24px;
+    font-weight: bold;
+}
+.deals-box a{
+    color: #fff;
+    background: linear-gradient(90deg, #2290cf 0%, #1b3868 100%);
+    padding: 8px 28px;
+    border-radius: 8px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -ms-border-radius: 8px;
+    -o-border-radius: 8px;
+    font-weight: 700;
+    font-size: 18px;
+}
+.deals-boxes > div > a{
+    max-width: 210px;
+    display: block;
+    margin: auto;
+    color: #fff;
+    background: linear-gradient(90deg, #2182BF 0%, #1C4375 100%);
+    padding: 8px 28px;
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -o-border-radius: 4px;
+    font-weight: 700;
+    font-size: 18px;
+}
+/* End deals */
+
+/* Start Home Banner */
+.banner-home{
+    margin-top: 35px;
+    height: 350px;
+    background-image: url('../images/banners/banner.webp');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.banner-home h3{
+    color: #fff;
+    width: 50%;
+    line-height: 1.7;
+    font-size: 42px;
+}
+/* End Home Banner */
+/* Start Footer */
+footer{
+    padding: 80px 0;
+}
+footer img.logo{
+    width: 120px;
+    margin-inline-end: 35px;
+}
+footer h3{
+    color: var(--main-color);
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+footer a{
+    color: #777;
+    font-size: 22px;
+}
+footer .social-icons i{
+    color: var(--main-color);
+    font-size: 30px;
+    margin-right: 15px;
+}
+footer .app-imgs img{
+    width: 140px;
+}
+.bottom-footer{
+    background-color: #f3f3f3;
+    border-top: 1px solid #d7d7d7;
+}
+.bottom-footer .righs{
+    font-size: 14px;
+    font-weight: 700;
+    color: #636363;
+}
+/* End Footer */
+
+/* End Home Page */
+
+/* Start Deals Page */
+.deals-header{
+    background: linear-gradient(90deg, #2182BF 0%, #1C4375 100%);
+    padding-block: 50px;
+}
+.deals-header h2{
+    color: #fff;
+    font-size: 40px;
+}
+.deals-header p{
+    color: #fff;
+    font-size: 24px;
+}
+.deals-header .deals-search-box{
+    background: rgba(255,255,255,.2);
+    padding: 50px 35px;
+    border-radius: 15px;
+}
+.deals-header .deals-search-box input[type="text"]{
+    padding: 12px;
+    border-radius: 12px;
+    -webkit-border-radius: 12px;
+    -moz-border-radius: 12px;
+    -ms-border-radius: 12px;
+    -o-border-radius: 12px;
+}
+.deals-header .deals-search-box span{
+    color: #fff;
+    margin-inline-end: 20px;
+    font-size: 20px;
+}
+.deals-header .deals-search-box .form-check{
+    /* margin-inline-start: 20px; */
+    display: flex;
+    align-items: center;
+}
+.deals-header .deals-search-box  label{
+    font-size: 20px;
+    color: #fff;
+}
+.deals-header .deals-search-box input[type="radio"]{
+    height: 20px;
+    width: 20px;
+    margin-inline-end: 6px;
+}
+
+.deals-banner{
+    position: relative;
+    min-height: 280px;
+    background-image: url(../images/new-img-handler.webp);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 40px;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+.deals-banner h5{
+    font-size: 25px;
+    font-weight: 700;
+    color: #fff;
+}
+.deals-banner h5 span{
+    font-size: 30px;
+    color: #fff;
+}
+.deals-banner p{
+    font-size: 22px;
+    color: #fff;
+}
+.deals-banner a{
+    display: inline-block;
+    color: #fff;
+    background: linear-gradient(90deg, #2182BF 0%, #1C4375 100%);
+    padding: 8px 40px;
+    border-radius: 8px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -ms-border-radius: 8px;
+    -o-border-radius: 8px;
+    font-weight: 700;
+    font-size: 18px;
+}
+.deals-p .deals-box img{
+    width: 160px;
+    height: 160px;
+    margin-inline-end: 15px;
+}
+.deals-p .deals-box h5{
+    margin-top: 0;
+    margin-bottom: 30px;
+}
+/* End Deals Page */
+/* Start Add Deal Page */
+.add-deal-form{
+    padding: 80px 0;
+}
+.deal-form-container{
+    border: 1px solid #979797;
+    padding: 50px 80px;
+    border-radius: 2px;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    -ms-border-radius: 2px;
+    -o-border-radius: 2px;
+}
+.deal-form-container img{
+    width: 140px;
+    margin-bottom: 50px;
+}
+.deal-form-container form{
+    max-width: 600px;
+    margin: auto;
+}
+.deal-form-container form input{
+    border: 1px solid #979797;
+    height: 55px;
+    padding-right: 25px;
+    border-radius: 30px;
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+    -ms-border-radius: 30px;
+    -o-border-radius: 30px;
+}
+.deal-form-container form textarea{
+    border: 1px solid #979797;
+    min-height: 120px;
+    padding-right: 25px;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+.deal-form-container form label{
+    border: 1px solid #979797;
+    height: 55px;
+    border-radius: 30px;
+    display: block;
+    line-height: 55px;
+    cursor: pointer;
+}
+.deal-form-container form input[type='submit']{
+    display: block;
+    width: 100%;
+    background: var(--main-color);
+    color: #fff;
+    padding: 12px;
+    margin-top: 35px;
+    font-size: 20px;
+    border: 0;
+    border-radius: 30px;
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+    -ms-border-radius: 30px;
+    -o-border-radius: 30px;
+}
+/* End Add Deal Page */
+/* Start Profile View */
+.profile-view-header{
+    padding-block: 80px;
+    border-bottom: solid 1px #d7d7d7;;
+}
+.profile-view-header .main-img{
+    max-height: 100px;
+    width: auto;
+}
+.profile-view-header .sm-img{
+    width: 50px;
+}
+.profile-view-header p{
+    font-weight: 700;
+    color: #474747;
+}
+.profile-view-header .fb{
+    background-color: #1877f2;
+    color: #fff;
+    padding: 12px 32px;
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -o-border-radius: 4px;
+    margin-inline-end: 10px;
+}
+.profile-view-header .li{
+    background-color: #0967c2;
+    color: #fff;
+    padding: 12px 32px;
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -o-border-radius: 4px;
+}
+.profile-view-header a i{
+    margin-left: 8px;
+}
+.profile-view-p .deals-boxes h3{
+    color: var(--main-color);
+    font-weight: 700;
+    font-size: 30px;
+    position: relative;
+    margin-bottom: 60px;
+}
+.profile-view-p .deals-boxes h3:before{
+    content: "";
+    position: absolute;
+    right: 6px;
+    bottom: -20px;
+    height: 6px;
+    width: 55px;
+    background: linear-gradient(90deg, #2182BF 0%, #1C4375 100%);
+    border-radius: 10px;
+}
+.profile-view-p .deals-boxes h3:after{
+    content: "";
+    position: absolute;
+    right: 65px;
+    bottom: -20px;
+    height: 6px;
+    width: 35px;
+    background: linear-gradient(90deg, #2182BF 0%, #1C4375 100%);
+    border-radius: 10px;
+}
+.profile-view-p .deals-boxes h3 span:after{
+    content: "";
+    position: absolute;
+    right: 105px;
+    bottom: -20px;
+    height: 6px;
+    width: 15px;
+    background: linear-gradient(90deg, #2182BF 0%, #1C4375 100%);
+    border-radius: 10px;
+}
+.profile-view-p .profile-about h3{
+    color: var(--main-color);
+    margin-bottom: 30px;
+    font-weight: 700;
+}
+.profile-view-p .profile-about p{
+    font-weight: 600;
+}
+.profile-deals .deals-box h4{
+    font-size: 18px;
+    margin-bottom: 15px;
+    color: var(--main-color);
+    font-weight: 700;
+}
+.profile-deals .deals-box h5{
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+/* End Profile View */
+/* Start Edit Profile View */
+.edit-profile-view-header{
+    position: relative;
+    padding-top: 80px;
+}
+.edit-profile-view-header:before{
+    content: "";
+    position: absolute;
+    height: 250px;
+    top: -1px;
+    left: 0;
+    right: 0;
+    background: linear-gradient(90deg, #2182BF 0%, #1C4375 100%);
+}
+.edit-profile-view-header .default-box{
+    position: relative;
+    background-color: #fff;
+    padding: 35px 50px;
+    border-radius: 15px;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    -ms-border-radius: 15px;
+    -o-border-radius: 15px;
+    box-shadow: 0px 3px 6px rgb(0 0 0 / 20%);
+}
+.edit-profile-view-header .image-update-wrapper{
+    position: relative;
+    background-color: #F8F8F8;
+    border: 1px solid #979797;
+    padding: 1px;
+    width: 200px;
+    height: 180px;
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -o-border-radius: 4px;
+}
+.edit-profile-view-header .image-update-wrapper .image-update{
+    opacity: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    margin: auto;
+    left: 0;
+    right: 0;
+    cursor: pointer;
+  }
+  .edit-profile-view-header .image-update-wrapper img{
+    object-fit: contain;
+}
+.edit-profile-view-header .image-update-wrapper .chg-img{
+    cursor: pointer;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #979797;
+    bottom: -20px;
+    background: #fff;
+    color: #979797;
+    font-size: 21px;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+.edit-profile-view-header h3{
+    color: #002547;
+    font-weight: 700;
+    font-size: 28px;
+    margin-top: 15px;
+}
+.edit-profile-view-header span{
+    color: #0091ff;
+    font-weight: 600;
+}
+.edit-profile-view-header li {
+    color: #3d3d3d;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+.edit-profile-view-header li i{
+    color: #0091ff;
+}
+.edit-profile-view-header a{
+    color: #fff;
+    background: linear-gradient(90deg, #2290cf 0%, #1b3868 100%);
+    padding: 8px 28px;
+    border-radius: 8px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -ms-border-radius: 8px;
+    -o-border-radius: 8px;
+    font-weight: 700;
+    font-size: 18px;
+}
+.edit-profile input{
+    height: 45px;
+    border: 1px solid #cacaca;
+}
+.edit-profile input::placeholder,
+.edit-profile textarea::placeholder{
+    text-align: right;
+    font-size: 13px;
+    font-weight: 600;
+    color: #002547;
+}
+.edit-profile input[type='submit']{
+    background-color: var(--main-color);
+    color: #fff;
+    padding: 8px 40px;
+    height: unset;
+    margin-top: 10px;
+    display: block;
+    margin-right: auto;
+    border-radius: 8px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -ms-border-radius: 8px;
+    -o-border-radius: 8px;
+}
+/* End Edit Profile View */

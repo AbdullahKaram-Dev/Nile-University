@@ -1,0 +1,233 @@
+
+@media (min-width: 992px){
+    .navbar-expand-lg .navbar-nav .nav-link {
+        /* padding-left: .8rem;
+        padding-right: .8rem; */
+    }
+}
+@media only screen and (max-width: 1199px) and (min-width: 992px){
+    .carousel-caption h5 {
+        font-size: 34px;
+        margin-bottom: 25px;
+    }
+    .carousel-caption p{
+        font-size: 16px;
+    }
+    .banner-home h3 {
+        font-size: 35px;
+    }
+}
+@media only screen and (max-width: 991px) and (min-width: 768px){
+    .navbar .nav-link.register{
+        display: inline-block;
+        margin-top: 10px;
+    }
+    .carousel-caption{
+        width: 50%;
+        display: flex;
+        align-items: center;
+    }
+    .carousel-caption h5 {
+        font-size: 28px;
+        margin-bottom: 20px;
+        line-height: 1.3;
+    }
+    .carousel-caption p{
+        font-size: 16px;
+        line-height: 1.6;
+    }
+    .blue-banner p{
+        font-size: 18px;
+    }
+    .about a.video-link{
+        height: 350px;
+    }
+    .about p {
+        font-size: 16px;
+    }
+    .banner-home h3 {
+        width: 60%;
+        font-size: 30px;
+    }
+    footer img.logo{
+        width: 100px;
+        margin-inline-end: 15px;
+    }
+    footer a{
+        font-size: 18px;
+    }
+    .deals-p .deals-box p{
+        font-size: 14px;
+    }
+    /* Start Add Deal Page */
+    .deal-form-container {
+        padding: 50px 20px
+    }
+    /* End Add Deal Page */
+    /* Start Edit Profile Page */
+    .edit-profile-view-header .default-box {
+        padding: 35px 15px
+    }
+    .edit-profile-view-header .image-update-wrapper{
+        width: 150px;
+        height: 150px;
+    }
+    .edit-profile-view-header h3 {
+        font-size: 20px;
+        margin-top: 5px;
+    }
+    .edit-profile-view-header a {
+        padding: 8px 22px;
+    }
+    /* End Edit Profile Page */
+    .login-form {
+        width: 100%;
+    }
+}
+@media only screen and (max-width: 767px){
+    .modal-content{
+        top: 45px;
+    }
+    .login-form {
+        width: 100%;
+    }
+    .w-sm-100{
+        width: 100%;
+    }
+    .navbar .nav-link.register{
+        display: inline-block;
+        margin-top: 10px;
+    }
+    .carousel-caption{
+        width: 50%;
+    }
+    .carousel-caption h5 {
+        font-size: 14px;
+        margin-bottom: 10px;
+        line-height: 1.3;
+    }
+    .carousel-caption p{
+        font-size: 9px;
+        line-height: 1.6;
+    }
+    .blue-banner p {
+        font-size: 16px;
+    }
+    .about a.video-link{
+        width: 100%;
+        height: 300px;
+    }
+    .about a.video-link:before {
+        top: -5px;
+        right: -5px;
+    }
+    .about a.video-link:after {
+        bottom: -5px;
+        left: -5px;
+    }
+    .about h2 {
+        margin-top: 40px;
+    }
+    .about p {
+        font-size: 16px;
+    }
+    .deals-box{
+        padding: 15px 10px;
+    }
+    .deals-box span {
+        font-size: 21px;
+    }
+    .deals-box a{
+        padding: 6px 24px;
+    }
+    .banner-home {
+        height: auto;
+    }
+    .banner-home h3 {
+        width: 72%;
+        font-size: 20px;
+    }
+    /* Start Deals Page */
+    .deals-header h2 {
+        font-size: 30px;
+    }
+    .deals-header p {
+        font-size: 18px;
+    }
+    .deals-header .deals-search-box {
+        padding: 30px 10px;
+    }
+    .deals-header .deals-search-box span {
+        margin-left: 5px;
+        font-size: 18px;
+    }
+    /* .form-check {
+        padding-right: 0;
+    } */
+    .deals-header .deals-search-box label {
+        font-size: 16px;
+    }
+    .deals-header .deals-search-box .form-check {
+        margin-inline-start: 0;
+        padding-inline-start: 1em;
+    }
+    .deals-banner p {
+        font-size: 18px;
+    }
+    .deals-p .deals-box{
+        text-align: center;
+    }
+    .deals-p .deals-box h5 {
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+    .deals-p .deals-box p{
+        font-size: 13px;
+    }
+    /* End Deals Page */
+    /* Start Add Deal Page */
+    .deal-form-container {
+        padding: 50px 20px
+    }
+    .profile-view-header .fb{
+        margin-inline-end: 0;
+        margin-bottom: 10px;
+    }
+    .profile-view-p .profile-about h3 {
+        font-size: 18px;
+    }
+    .profile-view-p .profile-about p {
+        font-size: 13px;
+        line-height: 1.6;
+    }
+    .deals-p .deals-box h4 {
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+    .profile-deals .deals-p .deals-box h5 {
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+    /* End Add Deal Page */
+    /* Start Edit Profile Page */
+    .edit-profile-view-header .default-box:first-of-type {
+        flex-direction: column;
+        align-items: center;
+        padding: 35px 15px;
+        text-align: center;
+    }
+    .edit-profile-view-header .default-box {
+        padding: 35px 15px;
+    }
+    .edit-profile-view-header h3 {
+        margin-top: 35px;
+        font-size: 20px;
+    }
+    /* End Edit Profile Page */
+}
+
+@media (min-width: 576px){
+    .modal-dialog {
+        margin: 3rem auto;
+    }
+}

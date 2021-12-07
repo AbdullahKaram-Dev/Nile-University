@@ -1,0 +1,44 @@
+.carousel-caption {
+    text-align: left;
+    right: unset;
+    left: 5%;
+}
+.profile-view-p .deals-boxes h3:before,
+.deals-head h3:before{
+    left: 6px;
+    right: unset;
+}
+.profile-view-p .deals-boxes h3:after,
+.deals-head h3:after{
+    left: 65px;
+    right: unset;
+}
+.profile-view-p .deals-boxes h3 span:after,
+.deals-head h3 span:after{
+    left: 105px;
+    right: unset;
+}
+.banner-home h3{
+    margin-left: auto;
+}
+footer .social-icons i{
+    margin-right: unset;
+    margin-left: 15px;
+}
+.deals-header i{
+    transform: rotate(180deg);
+}
+
+.login-form .login-input img{
+    right: unset;
+    left: 15px;
+}
+.login-form .login-input input{
+    padding-right: unset;
+    padding-left: 50px;
+}
+.edit-profile input::placeholder,
+.edit-profile textarea::placeholder,
+.login-form .login-input input::placeholder{
+    text-align: left;
+}
