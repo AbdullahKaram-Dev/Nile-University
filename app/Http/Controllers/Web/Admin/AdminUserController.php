@@ -14,7 +14,6 @@ class AdminUserController extends Controller
 
     public function __construct(AdminUserInterface $AdminUserInterface)
     {
-        /* test github */
         $this->AdminUserInterface = $AdminUserInterface;
     }
 
