@@ -8,7 +8,6 @@ use App\Http\Requests\Web\Admin\UpdateCityRequest;
 use App\Http\Requests\Web\Admin\StoreCityRequest;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\JsonResponse;
-use App\DataTables\CityDataTable;
 
 class AdminCityController extends Controller
 {
@@ -19,9 +18,9 @@ class AdminCityController extends Controller
         $this->AdminCityInterface = $AdminCityInterface;
     }
 
-    public function index():object
+    public function index()
     {
-        return $this->AdminCityInterface->index(new CityDataTable());
+        return $this->AdminCityInterface->index();
     }
 
     public function create():object

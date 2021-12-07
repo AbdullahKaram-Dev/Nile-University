@@ -28,22 +28,22 @@
                             <div class="widget-header">
                                 <div class="row">
                                     <div class="col-xl-12 col-md-12 col-sm-12 col-12">
-                                        <h4>{{__('dashboard.Translations')}} <span class="badge badge-info">{{request()->segment(3)}}</span> </h4>
+                                        <h4>{{__('dashboard.translation')}} <span class="badge badge-info">{{request()->segment(4)}}</span> </h4>
                                     </div>
                                 </div>
                             </div>
                             <div class="widget-content widget-content-area">
-                                <form action="{{route('admin.update.translations',request()->segment(3))}}" method="POST">
+                                <form action="{{route('admin.update.translations',request()->segment(4))}}" method="POST">
                                     @csrf
                                     <div class="form-row mb-3">
                                         @foreach($content as $key => $value)
 
                                             <div class="form-group col-md-4">
                                                 <label for="{{$key}}" style="word-break:break-all !important;"
-                                                       class="btn btn-light-default">{{ __('dashboard.Key') .': '. str_replace('_',' ',$key)}}</label>
+                                                       class="btn btn-light-default">{{ __('dashboard.key') .': '. str_replace('_',' ',$key)}}</label>
                                                 <input name="{{$key}}" value="{{$value}}" type="text"
                                                        class="form-control" id="{{$key}}"
-                                                       placeholder="{{__('dashboard.Value')}}">
+                                                       placeholder="{{__('dashboard.value')}}">
                                             </div>
 
                                         @endforeach
@@ -52,7 +52,7 @@
                                     <div class="col-md-12">
                                         <div class="form-group text-center">
                                             <button type="submit"
-                                                    class="btn btn-outline-primary btn-rounded mb-4">{{__('dashboard.Save_Update')}}</button>
+                                                    class="btn btn-outline-primary btn-rounded mb-4">{{__('dashboard.save')}}</button>
                                         </div>
                                     </div>
                                 </form>

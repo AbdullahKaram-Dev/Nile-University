@@ -15,7 +15,7 @@
             success: function (data) {
 
                 $.each(data, function (key, value) {
-                    if (data.success) {
+                    if (data.{{__('dashboard.success')}}) {
                         toastr.success(value, key);
                         playSoundSuccess();
                     } else {

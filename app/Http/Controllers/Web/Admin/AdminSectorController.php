@@ -7,7 +7,6 @@ use App\Http\Interfaces\Web\Admin\AdminSectorInterface;
 use App\Http\Requests\Web\Admin\UpdateSectorRequest;
 use App\Http\Requests\Web\Admin\StoreSectorRequest;
 use App\Http\Controllers\Controller;
-use App\DataTables\SectorDataTable;
 use Illuminate\Http\JsonResponse;
 
 class AdminSectorController extends Controller
@@ -19,9 +18,9 @@ class AdminSectorController extends Controller
         $this->AdminSectorInterface = $AdminSectorInterface;
     }
 
-    public function index():object
+    public function index()
     {
-        return $this->AdminSectorInterface->index(new SectorDataTable());
+        return $this->AdminSectorInterface->index();
     }
 
     public function create():object

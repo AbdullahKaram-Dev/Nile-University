@@ -11,10 +11,10 @@ trait GlobalResponse
     {
         $messages = [
             'success' => [
-                'success' => __('dashboard.operation_done_successfully')
+                __('dashboard.success') => __('dashboard.operation_done_successfully')
             ],
             'error' => [
-                'error' => __('dashboard.oops_an_error_occurred')
+                __('dashboard.error') => __('dashboard.oops_an_error_occurred')
             ]
         ];
 

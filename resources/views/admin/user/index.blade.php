@@ -28,11 +28,11 @@
                         <table id="users-datatable" class="table table-striped" style="padding-top:10px;">
                             <thead>
                             <tr>
-                                <th>id</th>
-                                <th>{{__('dashboard.name')}}</th>
-                                <th>Email</th>
-                                <th>Email Verified</th>
-                                <th>Action</th>
+                                <th>#</th>
+                                <th>{{__('dashboard.user_name')}}</th>
+                                <th>{{__('dashboard.user_email')}}</th>
+                                <th>{{__('dashboard.email_verified')}}</th>
+                                <th>{{__('dashboard.action')}}</th>
                             </tr>
                             </thead>
                             <tbody>

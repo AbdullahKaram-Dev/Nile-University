@@ -28,34 +28,34 @@
                                 @csrf
                                 <input required name="user_id" type="hidden" value="{{$user->id}}">
                                 <div class="info">
-                                    <h5 class="">{{__('dashboard.User_Password')}}</h5>
+                                    <h5 class="">{{__('dashboard.update_user_password')}}</h5>
                                     <div class="row">
                                         <div class="col-md-11 mx-auto">
                                             <div class="row">
                                                 <div class="col-md-6">
                                                     <div class="form-group">
-                                                        <label for="password">{{__('dashboard.New_password')}}</label>
+                                                        <label for="password">{{__('dashboard.new_password')}}</label>
                                                         <input required autocomplete="off" name="password"
                                                                type="password" class="form-control mb-4" id="password"
-                                                               placeholder="{{__('dashboard.New_password')}}">
+                                                               placeholder="{{__('dashboard.new_password')}}">
                                                     </div>
                                                 </div>
 
                                                 <div class="col-md-6">
                                                     <div class="form-group">
                                                         <label
-                                                            for="password_confirmation">{{__('dashboard.Confirm_password')}}</label>
+                                                            for="password_confirmation">{{__('dashboard.confirm_password')}}</label>
                                                         <input required autocomplete="off" name="password_confirmation"
                                                                type="password" class="form-control mb-4"
                                                                id="password_confirmation"
-                                                               placeholder="{{__('dashboard.Confirm_password')}}">
+                                                               placeholder="{{__('dashboard.confirm_password')}}">
                                                     </div>
                                                 </div>
 
                                                 <div class="col-md-12">
                                                     <div class="form-group text-center">
                                                         <button type="submit"
-                                                                class="btn btn-outline-primary btn-rounded mb-4">{{__('dashboard.save_now')}}</button>
+                                                                class="btn btn-outline-primary btn-rounded mb-4">{{__('dashboard.save')}}</button>
                                                     </div>
                                                 </div>
                                             </div>

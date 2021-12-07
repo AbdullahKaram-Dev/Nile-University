@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Web\Admin\AdminTranslationController;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
+use App\Http\Controllers\Web\Admin\AdminStartupController;
 use App\Http\Controllers\Web\Admin\AdminSectorController;
 use App\Http\Controllers\Web\Admin\AdminCityController;
 use App\Http\Controllers\Web\Admin\AdminUserController;
@@ -34,6 +35,7 @@ Route::get('translations',[AdminTranslationController::class,'index'])->name('ad
 Route::get('translations/{fileLang}/edit',[AdminTranslationController::class,'edit'])->name('admin.edit.translations');
 Route::post('translations/{fileLang}/update',[AdminTranslationController::class,'update'])->name('admin.update.translations');
 
+Route::resource('startups',AdminStartupController::class)->except(['update','destroy']);
 
 });
 

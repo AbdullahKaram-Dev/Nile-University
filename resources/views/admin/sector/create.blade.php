@@ -30,20 +30,20 @@
                                 <div class="row">
                                     <div class="col-lg-11 mx-auto">
                                         <div class="row">
-                                            
+
                                             <div class="col-xl-12 col-lg-12 col-md-8 mt-md-0 mt-4">
                                                 <div class="form">
                                                     <div class="row">
                                                         <div class="col-sm-6">
                                                             <div class="form-group">
-                                                                <label for="sector_name_ar">{{__('dashboard.sector_arabic_name')}}</label>
-                                                                <input required type="text" name="sector_name[ar]" class="form-control mb-4" id="sector_name_ar" placeholder="{{__('dashboard.sector_arabic_name')}}">
+                                                                <label for="sector_name_ar">{{__('dashboard.arabic_sector_name')}}</label>
+                                                                <input required type="text" name="sector_name[ar]" class="form-control mb-4" id="sector_name_ar" placeholder="{{__('dashboard.arabic_sector_name')}}">
                                                             </div>
                                                         </div>
                                                         <div class="col-sm-6">
                                                             <div class="form-group">
-                                                                <label for="sector_name_en">{{__('dashboard.sector_english_name')}}</label>
-                                                                <input required type="text" name="sector_name[en]" class="form-control mb-4" id="sector_name_en" placeholder="{{__('dashboard.sector_english_name')}}">
+                                                                <label for="sector_name_en">{{__('dashboard.english_sector_name')}}</label>
+                                                                <input required type="text" name="sector_name[en]" class="form-control mb-4" id="sector_name_en" placeholder="{{__('dashboard.english_sector_name')}}">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -52,7 +52,7 @@
 
                                             <div class="col-md-12">
                                                 <div class="form-group text-center">
-                                                    <button type="submit" class="btn btn-outline-primary btn-rounded mb-4">{{__('dashboard.save_now')}}</button>
+                                                    <button type="submit" class="btn btn-outline-primary btn-rounded mb-4">{{__('dashboard.save')}}</button>
                                                 </div>
                                             </div>
 

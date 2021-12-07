@@ -37,10 +37,10 @@
                                     <table class="table table-bordered mb-4">
                                         <thead>
                                         <tr>
-                                            <th>{{__('dashboard.language')}}</th>
+                                            <th>{{__('dashboard.languages')}}</th>
                                             <th>{{__('dashboard.language_code')}}</th>
-                                            <th class="text-center">{{__('dashboard.Status')}}</th>
-                                            <th>{{__('dashboard.Action')}}</th>
+                                            <th class="text-center">{{__('dashboard.status')}}</th>
+                                            <th>{{__('dashboard.action')}}</th>
                                         </tr>
                                         </thead>
                                         <tbody>
@@ -61,7 +61,7 @@
                                         </tr>
                                         @empty
                                             <tr>
-                                            <td colspan="4" class="text-center">{{__('dashboard.no_data_founded_yet_!')}}</td>
+                                            <td colspan="4" class="text-center">{{__('dashboard.no_data_founded_yet')}}</td>
                                             </tr>
                                         @endforelse
                                         </tbody>

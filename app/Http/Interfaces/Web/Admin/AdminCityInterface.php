@@ -3,12 +3,11 @@ declare(strict_types=1);
 
 namespace App\Http\Interfaces\Web\Admin;
 
-use App\DataTables\CityDataTable;
 use Illuminate\Http\JsonResponse;
 
 interface AdminCityInterface
 {
-    public function index(CityDataTable $cityDataTable):object;
+    public function index();
 
     public function create():object;
 
