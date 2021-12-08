@@ -42,4 +42,6 @@
 'translation' => 'translation',
 'key' => 'key',
 'value' => 'value',
+'startup_name' => 'startup name',
+'startup_logo' => 'startup logo',
 ];

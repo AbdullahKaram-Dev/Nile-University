@@ -9,7 +9,11 @@ use Spatie\Translatable\HasTranslations;
 class City extends Model
 {
     use HasFactory,HasTranslations;
-    
+
     public $translatable = ['city_name'];
     protected $guarded = ['id'];
+
+    protected $casts = [
+        'city_name' => 'array',
+    ];
 }

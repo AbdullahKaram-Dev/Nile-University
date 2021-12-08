@@ -42,4 +42,6 @@
 'translation' => 'ترجمة',
 'key' => 'المفتاح',
 'value' => 'القيمة',
+'startup_name' => 'أسم الشركة',
+'startup_logo' => 'شعار الشركة',
 ];
