@@ -6,4 +6,6 @@ namespace App\Http\Interfaces\Web\Admin;
 interface AdminStartupInterface
 {
     public function index();
+
+    public function showStartupWithDeals($startupID);
 }

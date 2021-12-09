@@ -44,4 +44,7 @@
 'value' => 'value',
 'startup_name' => 'startup name',
 'startup_logo' => 'startup logo',
+'created_at' => 'created at',
+'show_startup_and_deals' => 'show startup and deals',
+'startup_not_founded' => 'startup not founded',
 ];

@@ -44,4 +44,7 @@
 'value' => 'القيمة',
 'startup_name' => 'أسم الشركة',
 'startup_logo' => 'شعار الشركة',
+'created_at' => 'تاريخ الإنشاء',
+'show_startup_and_deals' => 'مشاهدة ملف الشركة وصفقاتها',
+'startup_not_founded' => 'ملف الشركة غير موجود',
 ];

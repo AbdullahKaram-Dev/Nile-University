@@ -35,6 +35,7 @@
                                 <th>{{__('dashboard.user_email')}}</th>
                                 <th>{{__('dashboard.arabic_city_name')}}</th>
                                 <th>{{__('dashboard.english_city_name')}}</th>
+                                <th>{{__('dashboard.created_at')}}</th>
                                 <th>{{__('dashboard.action')}}</th>
                             </tr>
                             </thead>
@@ -76,6 +77,7 @@
                     {data: 'user.email', name: 'user.email', orderable: false, searchable: false},
                     {data: 'city.city_name.ar', name: 'city.city_name.ar', orderable: false, searchable: false},
                     {data: 'city.city_name.en', name: 'city.city_name.en', orderable: false, searchable: false},
+                    {data: 'created_at', name: 'created_at', orderable: false, searchable: false},
                     {data: 'action', name: 'action', orderable: false, searchable: false},
                 ]
             });

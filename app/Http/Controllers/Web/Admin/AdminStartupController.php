@@ -19,4 +19,9 @@ class AdminStartupController extends Controller
     {
         return $this->adminStartUpInterface->index();
     }
+
+    public function show($startupID)
+    {
+        return $this->adminStartUpInterface->showStartupWithDeals($startupID);
+    }
 }
