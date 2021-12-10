@@ -2,6 +2,8 @@
 
 namespace App\Providers;
 
+use App\Http\Interfaces\Web\Admin\AdminDealInterface;
+use App\Http\Repositories\Web\Admin\AdminDealRepository;
 use App\Http\Repositories\Web\Admin\AdminStartupRepository;
 use App\Http\Repositories\Web\Admin\AdminSectorRepository;
 use App\Http\Repositories\Web\Admin\AdminHomeRepository;
@@ -24,6 +26,7 @@ class RepositoryServiceProvider extends ServiceProvider
         $this->app->bind(AdminSectorInterface::class,AdminSectorRepository::class);
         $this->app->bind(AdminCityInterface::class,AdminCityRepository::class);
         $this->app->bind(AdminStartupInterface::class,AdminStartupRepository::class);
+        $this->app->bind(AdminDealInterface::class,AdminDealRepository::class);
     }
 
 

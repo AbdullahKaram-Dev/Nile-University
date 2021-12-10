@@ -4,9 +4,9 @@ declare(strict_types=1);
 namespace App\Http\Repositories\Web\Admin;
 
 use App\Http\Interfaces\Web\Admin\AdminStartupInterface;
+use Illuminate\Database\Eloquent\ModelNotFoundException;
 use App\Http\Traits\Web\Admin\GlobalResponse;
 use App\Models\Startup;
-use Illuminate\Database\Eloquent\ModelNotFoundException;
 
 class AdminStartupRepository implements AdminStartupInterface
 {
@@ -33,7 +33,7 @@ class AdminStartupRepository implements AdminStartupInterface
                 })
                 ->addIndexColumn()
                 ->addColumn('action', function ($startups) {
-                    return $this->dropDownControlUser($startups->id);
+                    return $this->dropDownStartupControl($startups->id);
                 })
                 ->rawColumns(['action','startup_logo','created_at'])
                 ->make(true);
@@ -46,7 +46,7 @@ class AdminStartupRepository implements AdminStartupInterface
         return '<img src="'.asset('/storage/startup-avatar/'.$startup_logo).'" class="img-fluid" alt="avatar">';
     }
 
-    private function dropDownControlUser($startup):string
+    private function dropDownStartupControl($startup):string
     {
         return '<div class="btn-group">
                 <button type="button" class="btn btn-dark btn-sm dropdown-toggle dropdown-toggle-split" id="dropdownMenuReference1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-reference="parent">' . __("dashboard.open") . '</button>
@@ -59,15 +59,14 @@ class AdminStartupRepository implements AdminStartupInterface
                </div>';
     }
 
-    public function showStartupWithDeals($startupID)
+    public function showStartupInfo($startupID)
     {
         try {
             return view('admin.startup.view', ['startup' => $this->startUpModel
-                     ->with(['user:id,name,email','city:id,city_name','deals' => function($query){
-                     $query->paginate(10);
-                    }])->findOrFail($startupID)->toArray()]);
+                     ->with(['user:id,name,email','city:id,city_name','sectors'])->findOrFail($startupID)->toArray()]);
         } catch (ModelNotFoundException $modelNotFoundException) {
             return redirect(route('startups.index'))->with(['error' => __('dashboard.startup_not_founded')]);
         }
     }
+
 }

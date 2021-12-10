@@ -58,8 +58,8 @@ class AdminSectorRepository implements AdminSectorInterface
         try {
             $this->SectorModel->create($request->validated());
             return $this->responseJson('success', 200);
-        } catch (\RuntimeException $exception) {
-            return response()->json('error', 500);
+        } catch (\Exception $exception) {
+            return $this->responseJson('error', 200);
         }
     }
 
@@ -78,8 +78,8 @@ class AdminSectorRepository implements AdminSectorInterface
             $this->SectorModel->find($sectorUpdateRequest->sector_id)
                 ->update($sectorUpdateRequest->validated());
             return $this->responseJson('success', 200);
-        } catch (\RuntimeException $exception) {
-            return $this->responseJson('error', 500);
+        } catch (\Exception $exception) {
+            return $this->responseJson('error', 200);
         }
     }
 

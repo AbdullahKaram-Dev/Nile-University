@@ -9,8 +9,10 @@ use Spatie\Translatable\HasTranslations;
 class Sector extends Model
 {
     use HasFactory,HasTranslations;
-    
+
     public $translatable = ['sector_name'];
     protected $guarded = ['id'];
+    protected $hidden = ['pivot'];
+
 
 }

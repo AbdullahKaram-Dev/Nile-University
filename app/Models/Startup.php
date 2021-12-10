@@ -24,7 +24,8 @@ class Startup extends Model
 
     public function sectors()
     {
-        return $this->belongsToMany(Sector::class,'sector_startup','startup_id','sector_id')->withTimestamps();
+        return $this->belongsToMany(Sector::class,'sector_startup','startup_id','sector_id')
+            ->withTimestamps();
     }
 
     public function deals()

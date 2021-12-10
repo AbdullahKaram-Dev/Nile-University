@@ -17,7 +17,7 @@ class CreateDealsTable extends Migration
             $table->id();
             $table->foreignId('startup_id')->constrained()->cascadeOnDelete()->cascadeOnUpdate();
             $table->text('deal_name')->collation("utf8_general_ci");
-            $table->text('deal_description')->collation("utf8_general_ci");
+            $table->longText('deal_description')->collation("utf8_general_ci");
             $table->string('deal_value')->collation("utf8_general_ci");
             $table->string('deal_logo');
             $table->timestamps();

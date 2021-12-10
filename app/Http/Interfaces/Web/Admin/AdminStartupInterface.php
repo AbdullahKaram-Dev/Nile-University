@@ -7,5 +7,6 @@ interface AdminStartupInterface
 {
     public function index();
 
-    public function showStartupWithDeals($startupID);
+    public function showStartupInfo($startupID);
+
 }

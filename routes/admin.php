@@ -6,6 +6,7 @@ use App\Http\Controllers\Web\Admin\AdminStartupController;
 use App\Http\Controllers\Web\Admin\AdminSectorController;
 use App\Http\Controllers\Web\Admin\AdminCityController;
 use App\Http\Controllers\Web\Admin\AdminUserController;
+use App\Http\Controllers\Web\Admin\AdminDealController;
 use App\Http\Controllers\Web\Admin\AdminHomeController;
 use App\Http\Controllers\AdminAuth\LoginController;
 use Illuminate\Support\Facades\Route;
@@ -36,6 +37,10 @@ Route::get('translations/{fileLang}/edit',[AdminTranslationController::class,'ed
 Route::post('translations/{fileLang}/update',[AdminTranslationController::class,'update'])->name('admin.update.translations');
 
 Route::resource('startups',AdminStartupController::class)->except(['update','destroy']);
+
+Route::get('deals-startup/{startup}',[AdminDealController::class,'startupDeals']);
+Route::post('deal-change-status',[AdminDealController::class,'changeDealStatus'])->name('admin.change.deal.status');
+
 
 });
 
