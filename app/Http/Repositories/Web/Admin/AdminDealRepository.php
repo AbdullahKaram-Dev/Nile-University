@@ -14,11 +14,7 @@ class AdminDealRepository implements AdminDealInterface
     use GlobalResponse;
 
     public Deal $dealModel;
-    public static array $DEAL_STATUS = [
-        'pending'  => 0,
-        'approved' => 1,
-        'rejected' => 2
-    ];
+    public static array $DEAL_STATUS = ['pending' => 0, 'approved' => 1, 'rejected' => 2];
 
     public function __construct(Deal $dealModel)
     {
@@ -28,7 +24,7 @@ class AdminDealRepository implements AdminDealInterface
     public function startupDeals($startupID): JsonResponse
     {
         if (request()->ajax()) {
-            $deals = $this->dealModel->select(['status','id', 'deal_name', 'deal_description', 'deal_value', 'deal_logo', 'created_at',
+            $deals = $this->dealModel->select(['status', 'id', 'deal_name', 'deal_description', 'deal_value', 'deal_logo', 'created_at',
                 DB::raw("JSON_VALUE(deals.deal_name, '$.en') AS deal_name_en"),
                 DB::raw("JSON_VALUE(deals.deal_name, '$.ar') AS deal_name_ar"),
                 DB::raw("JSON_VALUE(deals.deal_description, '$.en') AS deal_description_en"),
@@ -42,11 +38,11 @@ class AdminDealRepository implements AdminDealInterface
                 })
                 ->editColumn('status', function ($deals) {
                     $selectOption = '';
-                    foreach(self::$DEAL_STATUS as $statusName => $statusValue){
+                    foreach (self::$DEAL_STATUS as $statusName => $statusValue) {
                         $selectedStatus = ($statusValue == $deals->status) ? 'selected' : '';
-                        $selectOption .= '<option value="'.$deals->id.'" '.$selectedStatus.'>'.$statusName.'</option>';
+                        $selectOption .= '<option value="' . $deals->id . '" ' . $selectedStatus . '>' . $statusName . '</option>';
                     }
-                    return '<select class="border-0" onchange="changeDealStatus(this)">'.$selectOption.'</select>';
+                    return '<select class="border-width-2px" onchange="changeDealStatus(this)">' . $selectOption . '</select>';
                 })
                 ->editColumn('created_at', function ($deals) {
                     return $deals->created_at->diffForHumans();
@@ -54,23 +50,23 @@ class AdminDealRepository implements AdminDealInterface
                 ->addColumn('action', function ($deals) {
                     return $this->dropDownDealsControl($deals->id);
                 })
-                ->filterColumn("deal_name_en", function($query, $keyword) {
+                ->filterColumn("deal_name_en", function ($query, $keyword) {
                     $sql = "JSON_VALUE(deals.deal_name, '$.en')  like ?";
                     $query->whereRaw($sql, ["%{$keyword}%"]);
                 })
-                ->filterColumn("deal_name_ar", function($query, $keyword) {
+                ->filterColumn("deal_name_ar", function ($query, $keyword) {
                     $sql = "JSON_VALUE(deals.deal_name, '$.ar')  like ?";
                     $query->whereRaw($sql, ["%{$keyword}%"]);
                 })
-                ->filterColumn("deal_description_en", function($query, $keyword) {
+                ->filterColumn("deal_description_en", function ($query, $keyword) {
                     $sql = "JSON_VALUE(deals.deal_description, '$.en')  like ?";
                     $query->whereRaw($sql, ["%{$keyword}%"]);
                 })
-                ->filterColumn("deal_description_ar", function($query, $keyword) {
+                ->filterColumn("deal_description_ar", function ($query, $keyword) {
                     $sql = "JSON_VALUE(deals.deal_description, '$.ar')  like ?";
                     $query->whereRaw($sql, ["%{$keyword}%"]);
                 })
-                ->rawColumns(['action', 'deal_logo', 'created_at','status'])
+                ->rawColumns(['action', 'deal_logo', 'created_at', 'status'])
                 ->make(true);
         }
     }
@@ -83,7 +79,7 @@ class AdminDealRepository implements AdminDealInterface
                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><polyline points="6 9 12 15 18 9"></polyline></svg>
                 </button>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuReference1">
-                  <a class="dropdown-item" href="' . route('startups.show', ['startup' => $deal]) . '">' . __('dashboard.show_startup_and_deals') . '</a>
+                  <a class="dropdown-item"  onclick="deleteDeal(' . $deal . ')">' . __('dashboard.delete_deal') . '</a>
                 </div>
                </div>';
     }
@@ -93,13 +89,23 @@ class AdminDealRepository implements AdminDealInterface
         return '<img src="' . asset('/storage/deal-avatar/' . $deal_logo) . '" class="img-fluid" alt="avatar">';
     }
 
-    public function changeDealStatus($request):JsonResponse
+    public function changeDealStatus($request): JsonResponse
     {
         try {
             $this->dealModel->find($request->deal_id)->update(['status' => self::$DEAL_STATUS[$request->status]]);
-            return $this->responseJson('success',200);
-        }catch (\Exception $exception){
-            return $this->responseJson('error',200);
+            return $this->responseJson('success', 200);
+        } catch (\Exception $exception) {
+            return $this->responseJson('error', 200);
+        }
+    }
+
+    public function destroyDeal($request):JsonResponse
+    {
+        try {
+            $this->dealModel->find($request->deal_id)->delete();
+            return $this->responseJson('success', 200);
+        } catch (\Exception $exception) {
+            return $this->responseJson('error', 200);
         }
     }
 }

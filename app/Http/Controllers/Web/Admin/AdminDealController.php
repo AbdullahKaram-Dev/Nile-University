@@ -26,4 +26,9 @@ class AdminDealController extends Controller
        return $this->adminDealInterface->changeDealStatus($request);
     }
 
+    public function destroyDeal(Request $request)
+    {
+        return $this->adminDealInterface->destroyDeal($request);
+    }
+
 }

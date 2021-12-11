@@ -57,4 +57,5 @@
 'owner_name' => 'owner name',
 'owner_email' => 'owner email',
 'startup_sectors' => 'startup sectors',
+'delete_deal' => 'delete deal',
 ];

@@ -93,6 +93,7 @@
     <script src="{{asset('admin/plugins/table/datatable/button-ext/buttons.html5.min.js')}}"></script>
     <script src="{{asset('admin/plugins/table/datatable/button-ext/buttons.print.min.js')}}"></script>
     @include('admin.scripts.deal.update-deal-status')
+    @include('admin.scripts.deal.delete-deal')
     <script type="text/javascript">
         $(function () {
             let table = $('#deals-datatable').DataTable({

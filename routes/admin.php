@@ -40,7 +40,7 @@ Route::resource('startups',AdminStartupController::class)->except(['update','des
 
 Route::get('deals-startup/{startup}',[AdminDealController::class,'startupDeals']);
 Route::post('deal-change-status',[AdminDealController::class,'changeDealStatus'])->name('admin.change.deal.status');
-
+Route::post('deal-delete',[AdminDealController::class,'destroyDeal'])->name('admin.delete.deal');
 
 });
 

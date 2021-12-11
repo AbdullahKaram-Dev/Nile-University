@@ -8,4 +8,6 @@ interface AdminDealInterface
     public function startupDeals($startupID);
 
     public function changeDealStatus($request);
+
+    public function destroyDeal($request);
 }
