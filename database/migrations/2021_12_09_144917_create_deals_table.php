@@ -20,6 +20,7 @@ class CreateDealsTable extends Migration
             $table->longText('deal_description')->collation("utf8_general_ci");
             $table->string('deal_value')->collation("utf8_general_ci");
             $table->string('deal_logo');
+            $table->boolean('status')->default(0)->comment('0 pending , 1 approval , 2 rejected');
             $table->timestamps();
         });
     }

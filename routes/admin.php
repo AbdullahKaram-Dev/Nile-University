@@ -21,7 +21,7 @@ Route::group(['prefix' => 'administration-dashboard','middleware' => ['auth:admi
 Route::get('home',[AdminHomeController::class,'index'])->name('admin.home');
 Route::resource('users',AdminUserController::class)->except('update','destroy');
 Route::post('update-user-password',[AdminUserController::class,'updateUserPassword'])->name('admin.update.password');
-
+Route::post('delete-user',[AdminUserController::class,'deleteUser'])->name('admin.delete.user');
 
 Route::resource('sectors',AdminSectorController::class)->except(['update','destroy']);
 Route::post('sectors-update',[AdminSectorController::class,'update'])->name('sector.update');

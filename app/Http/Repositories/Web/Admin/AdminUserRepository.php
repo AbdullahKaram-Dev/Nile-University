@@ -82,7 +82,18 @@ class AdminUserRepository implements AdminUserInterface
                 </button>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuReference1">
                   <a class="dropdown-item" href="' . route('users.edit', ['user' => $user_id]) . '">' . __('dashboard.edit_password') . '</a>
+                  <a class="dropdown-item" onclick="deleteUser('.$user_id.')">' . __('dashboard.delete_user') . '</a>
                 </div>
                </div>';
+    }
+
+    public function deleteUser($request)
+    {
+        try {
+            $this->userModel->find($request->user_id)->delete();
+            return $this->responseJson('success', 200);
+        } catch (\Exception $exception) {
+            return $this->responseJson('error', 200);
+        }
     }
 }

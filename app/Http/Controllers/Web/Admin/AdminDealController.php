@@ -3,8 +3,8 @@ declare(strict_types=1);
 
 namespace App\Http\Controllers\Web\Admin;
 
-use App\Http\Controllers\Controller;
 use App\Http\Interfaces\Web\Admin\AdminDealInterface;
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 class AdminDealController extends Controller

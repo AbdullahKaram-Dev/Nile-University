@@ -14,4 +14,6 @@ interface AdminUserInterface
     public function edit($user_id):object;
 
     public function updateUserPassword($request):JsonResponse;
+
+    public function deleteUser($request);
 }

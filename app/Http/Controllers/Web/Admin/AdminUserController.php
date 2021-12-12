@@ -7,6 +7,7 @@ use App\Http\Interfaces\Web\Admin\AdminUserInterface;
 use App\Http\Requests\Web\Admin\UpdateUserPassword;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\JsonResponse;
+use Illuminate\Http\Request;
 
 class AdminUserController extends Controller
 {
@@ -35,5 +36,10 @@ class AdminUserController extends Controller
     public function updateUserPassword(UpdateUserPassword $updateUserPassword): JsonResponse
     {
         return $this->AdminUserInterface->updateUserPassword($updateUserPassword);
+    }
+
+    public function deleteUser(Request $request)
+    {
+        return $this->AdminUserInterface->deleteUser($request);
     }
 }
