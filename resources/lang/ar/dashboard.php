@@ -58,5 +58,8 @@
 'owner_email' => 'البريد الألكترونى للمالك',
 'startup_sectors' => 'القطاعات الخاصة بالشركة',
 'delete_deal' => 'حذف الصفقة',
-'delete_user' => 'حذف المستخدم',
+'delete_user_and_startup' => 'حذف المستخدم وملف الشركة',
+'edit_user_info' => 'تعديل بيانات المستخدم',
+'update_user_general_information' => 'تعديل معلومات المستخدم',
+'create_startup' => 'انشاء ملف شركة',
 ];

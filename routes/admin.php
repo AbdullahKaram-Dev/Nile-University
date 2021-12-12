@@ -22,6 +22,9 @@ Route::get('home',[AdminHomeController::class,'index'])->name('admin.home');
 Route::resource('users',AdminUserController::class)->except('update','destroy');
 Route::post('update-user-password',[AdminUserController::class,'updateUserPassword'])->name('admin.update.password');
 Route::post('delete-user',[AdminUserController::class,'deleteUser'])->name('admin.delete.user');
+Route::get('users/edit-user-info/{user}',[AdminUserController::class,'editUserInfo'])->name('admin.edit.user.info');
+Route::post('users/update-user-info',[AdminUserController::class,'updateUserInfo'])->name('admin.update.user.info');
+
 
 Route::resource('sectors',AdminSectorController::class)->except(['update','destroy']);
 Route::post('sectors-update',[AdminSectorController::class,'update'])->name('sector.update');
@@ -41,6 +44,7 @@ Route::resource('startups',AdminStartupController::class)->except(['update','des
 Route::get('deals-startup/{startup}',[AdminDealController::class,'startupDeals']);
 Route::post('deal-change-status',[AdminDealController::class,'changeDealStatus'])->name('admin.change.deal.status');
 Route::post('deal-delete',[AdminDealController::class,'destroyDeal'])->name('admin.delete.deal');
+
 
 });
 

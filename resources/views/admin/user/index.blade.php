@@ -31,15 +31,12 @@
                                 <th>#</th>
                                 <th>{{__('dashboard.user_name')}}</th>
                                 <th>{{__('dashboard.user_email')}}</th>
-                                <th>{{__('dashboard.email_verified')}}</th>
                                 <th>{{__('dashboard.action')}}</th>
                             </tr>
                             </thead>
                             <tbody>
                             </tbody>
                         </table>
-
-
                     </div>
                 </div>
             </div>
@@ -70,7 +67,6 @@
                 {data: 'DT_RowIndex', name: 'id'},
                 {data: 'name', name: 'name'},
                 {data: 'email', name: 'email'},
-                {data: 'email_verified', name: 'email_verified'},
                 {
                     data: 'action', name: 'action', orderable: false, searchable: false
                 },

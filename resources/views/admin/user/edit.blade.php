@@ -76,5 +76,5 @@
 @endsection
 
 @section('scripts')
-    @include('admin.scripts.user.update-user-profile')
+    @include('admin.scripts.user.update-user-password')
 @endsection

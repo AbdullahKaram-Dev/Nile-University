@@ -58,5 +58,8 @@
 'owner_email' => 'owner email',
 'startup_sectors' => 'startup sectors',
 'delete_deal' => 'delete deal',
-'delete_user' => 'delete user',
+'delete_user_and_startup' => 'delete user and startup',
+'edit_user_info' => 'edit user info',
+'update_user_general_information' => 'update user general information',
+'create_startup' => 'create startup',
 ];

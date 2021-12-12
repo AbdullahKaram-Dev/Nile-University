@@ -30,5 +30,4 @@ class AdminDealController extends Controller
     {
         return $this->adminDealInterface->destroyDeal($request);
     }
-
 }

@@ -25,4 +25,9 @@ class AdminStartupController extends Controller
         return $this->adminStartUpInterface->showStartupInfo($startupID);
     }
 
+    public function create()
+    {
+        dd('ss');
+    }
+
 }

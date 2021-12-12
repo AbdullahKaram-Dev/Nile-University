@@ -47,8 +47,8 @@ class AdminDealRepository implements AdminDealInterface
                 ->editColumn('created_at', function ($deals) {
                     return $deals->created_at->diffForHumans();
                 })
-                ->addColumn('action', function ($deals) {
-                    return $this->dropDownDealsControl($deals->id);
+                ->addColumn('action', function ($deals) use ($startupID) {
+                    return $this->dropDownDealsControl($deals->id,$startupID);
                 })
                 ->filterColumn("deal_name_en", function ($query, $keyword) {
                     $sql = "JSON_VALUE(deals.deal_name, '$.en')  like ?";
@@ -71,7 +71,7 @@ class AdminDealRepository implements AdminDealInterface
         }
     }
 
-    private function dropDownDealsControl($deal): string
+    private function dropDownDealsControl($deal,$startupID): string
     {
         return '<div class="btn-group">
                 <button type="button" class="btn btn-dark btn-sm dropdown-toggle dropdown-toggle-split" id="dropdownMenuReference1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-reference="parent">' . __("dashboard.open") . '</button>

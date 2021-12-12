@@ -9,9 +9,10 @@ use Illuminate\Support\Facades\Auth;
 
 Route::group(['prefix' => LaravelLocalization::setLocale(),'middleware' => [ 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath' ]],function (){
 
-Auth::routes(['verify' => true]);
+//['verify' => true]
+Auth::routes();
 Route::get('logout',[LoginController::class,'logout'])->name('logout');
-Route::get('en/email/verify/{id}/{hash}',[VerificationController::class,'verify'])->name('verification.verify');
+//Route::get('en/email/verify/{id}/{hash}',[VerificationController::class,'verify'])->name('verification.verify');
 
 Route::get('/',function (){
     return view('web-site-home');
