@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Web\Admin;
 
 use App\Http\Interfaces\Web\Admin\AdminStartupInterface;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Web\Admin\StoreUserStartup;
+use Illuminate\Http\Request;
 
 class AdminStartupController extends Controller
 {
@@ -27,7 +29,12 @@ class AdminStartupController extends Controller
 
     public function create()
     {
-        dd('ss');
+        return $this->adminStartUpInterface->create();
+    }
+
+    public function createUserStartup(StoreUserStartup $storeUserStartup)
+    {
+        return $this->adminStartUpInterface->createUserStartup($storeUserStartup);
     }
 
 }

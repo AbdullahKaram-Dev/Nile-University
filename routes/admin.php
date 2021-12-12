@@ -40,6 +40,7 @@ Route::get('translations/{fileLang}/edit',[AdminTranslationController::class,'ed
 Route::post('translations/{fileLang}/update',[AdminTranslationController::class,'update'])->name('admin.update.translations');
 
 Route::resource('startups',AdminStartupController::class)->except(['update','destroy']);
+Route::post('create-user-startup',[AdminStartupController::class,'createUserStartup'])->name('admin.store.user.startup');
 
 Route::get('deals-startup/{startup}',[AdminDealController::class,'startupDeals']);
 Route::post('deal-change-status',[AdminDealController::class,'changeDealStatus'])->name('admin.change.deal.status');

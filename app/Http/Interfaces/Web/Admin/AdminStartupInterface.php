@@ -9,4 +9,7 @@ interface AdminStartupInterface
 
     public function showStartupInfo($startupID);
 
+    public function create();
+
+    public function createUserStartup($request);
 }

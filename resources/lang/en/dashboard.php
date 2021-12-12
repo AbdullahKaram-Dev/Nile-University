@@ -62,4 +62,8 @@
 'edit_user_info' => 'edit user info',
 'update_user_general_information' => 'update user general information',
 'create_startup' => 'create startup',
+'user_password' => 'user password',
+'select_city' => 'select city',
+'select_sectors' => 'select sectors',
+'sorry_no_sectors_founded_you_must_create_at_least_one_before_creating_startup_click_here_to_add_sector' => 'sorry no sectors founded you must create at least one before creating startup click here to add sector',
 ];

@@ -21,6 +21,11 @@
 
         <div class="row layout-top-spacing ">
 
+            <div class="col-lg-12">
+                <a href="{{route('startups.create')}}"
+                   class="btn btn-info btn-rounded mb-4 float-right">{{__('dashboard.create_startup')}}</a>
+            </div>
+
             <div class="col-xl-12 col-lg-12 col-sm-12  layout-spacing">
                 <div class="widget-content widget-content-area br-6">
                     <div class="table-responsive mb-4 mt-4">
