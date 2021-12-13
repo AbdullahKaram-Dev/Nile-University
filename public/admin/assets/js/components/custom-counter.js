@@ -100,3 +100,36 @@ $('.c-counter4').countTo({
         return value.toFixed(options.decimals).replace(/\B(?=(?:\d{3})+(?!\d))/g, ',');
     }
 });
+
+
+var value = $('.c-counter5').text();
+$('.c-counter5').countTo({
+    from: 0,
+    to: value,
+    speed: cSpeed,
+    formatter: function (value, options) {
+        return value.toFixed(options.decimals).replace(/\B(?=(?:\d{3})+(?!\d))/g, ',');
+    }
+});
+
+
+var value = $('.c-counter6').text();
+$('.c-counter6').countTo({
+    from: 0,
+    to: value,
+    speed: cSpeed,
+    formatter: function (value, options) {
+        return value.toFixed(options.decimals).replace(/\B(?=(?:\d{3})+(?!\d))/g, ',');
+    }
+});
+
+var value = $('.c-counter7').text();
+$('.c-counter7').countTo({
+    from: 0,
+    to: value,
+    speed: cSpeed,
+    formatter: function (value, options) {
+        return value.toFixed(options.decimals).replace(/\B(?=(?:\d{3})+(?!\d))/g, ',');
+    }
+});
+

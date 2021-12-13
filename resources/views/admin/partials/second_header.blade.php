@@ -8,10 +8,9 @@
 
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="customDropdown">
                         <a class="dropdown-item" data-value="Settings" href="javascript:void(0);">Settings</a>
-                        <a class="dropdown-item" data-value="Mail" href="javascript:void(0);">Mail</a>
-                        <a class="dropdown-item" data-value="Print" href="javascript:void(0);">Print</a>
-                        <a class="dropdown-item" data-value="Download" href="javascript:void(0);">Download</a>
-                        <a class="dropdown-item" data-value="Share" href="javascript:void(0);">Share</a>
+                            @foreach (LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
+                                <a class="dropdown-item {{($localeCode == app()->getLocale()) ? 'active' : ''}}" href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}"><img src="{{asset('admin/assets/img/'.$localeCode.'.png')}}" class="flag-width w-25" alt="flag"> <span class="align-self-center">&nbsp;{{ $properties['native'] }}</span></a>
+                            @endforeach
                     </div>
                 </div>
             </li>
