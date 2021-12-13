@@ -25,7 +25,7 @@ class AdminUserRepository implements AdminUserInterface
     public function index()
     {
         if (request()->ajax()) {
-            $users = $this->userModel->select('id', 'name', 'email')->with('startup');
+            $users = $this->userModel->whereHas('startup')->select('id', 'name', 'email')->with('startup');
             return datatables()->eloquent($users)
                 ->addIndexColumn()
                 ->addColumn('action', function ($users) {

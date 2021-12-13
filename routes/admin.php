@@ -43,6 +43,7 @@ Route::resource('startups',AdminStartupController::class)->except(['update','des
 Route::post('create-user-startup',[AdminStartupController::class,'createUserStartup'])->name('admin.store.user.startup');
 Route::post('startup-change-status',[AdminStartupController::class,'changeStartupStatus'])->name('admin.change.startup.status');
 Route::post('startup-change-deal-status',[AdminStartupController::class,'changeStartupDealStatus'])->name('admin.change.startup.deal.status');
+Route::post('update-startup',[AdminStartupController::class,'updateStartup'])->name('admin.update.startup');
 
 
 Route::get('deals-startup/{startup}',[AdminDealController::class,'startupDeals']);

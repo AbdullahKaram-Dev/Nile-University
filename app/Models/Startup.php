@@ -32,5 +32,4 @@ class Startup extends Model
     {
         return $this->hasMany(Deal::class,'startup_id');
     }
-
 }

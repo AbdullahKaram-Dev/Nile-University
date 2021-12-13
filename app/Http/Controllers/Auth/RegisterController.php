@@ -94,7 +94,7 @@ class RegisterController extends Controller
             'startup_logo' => $this->uploadStartUpAvatar($request->startup_logo)
         ]);
 
-        $startUp->sectors()->syncWithoutDetaching($request->input('sector_ids'));
+        $startUp->sectors()->sync($request->input('sector_ids'));
         return $user;
     }
 }

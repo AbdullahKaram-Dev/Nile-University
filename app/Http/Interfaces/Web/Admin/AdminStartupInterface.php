@@ -16,4 +16,8 @@ interface AdminStartupInterface
     public function changeStartupStatus($request);
 
     public function changeStartupDealStatus($request);
+
+    public function edit($startup_id);
+
+    public function updateStartup($request);
 }

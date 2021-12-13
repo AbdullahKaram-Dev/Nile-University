@@ -67,4 +67,5 @@
 'select_sectors' => 'select sectors',
 'sorry_no_sectors_founded_you_must_create_at_least_one_before_creating_startup_click_here_to_add_sector' => 'sorry no sectors founded you must create at least one before creating startup click here to add sector',
 'deal_status' => 'deal status',
+'edit_startup' => 'edit startup',
 ];

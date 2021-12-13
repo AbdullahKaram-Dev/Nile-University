@@ -4,6 +4,7 @@ declare(strict_types=1);
 namespace App\Http\Repositories\Web\Admin;
 
 use App\Http\Interfaces\Web\Admin\AdminStartupInterface;
+use App\Models\City;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use App\Http\Traits\Web\Startup\StartUpTrait;
 use App\Http\Traits\Web\Admin\GlobalResponse;
@@ -67,6 +68,7 @@ class AdminStartupRepository implements AdminStartupInterface
                 </button>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuReference1">
                   <a class="dropdown-item" href="' . route('startups.show', ['startup' => $startup]) . '">' . __('dashboard.show_startup_and_deals') . '</a>
+                  <a class="dropdown-item" href="' . route('startups.edit', ['startup' => $startup]) . '">' . __('dashboard.edit_startup') . '</a>
                 </div>
                </div>';
     }
@@ -146,6 +148,39 @@ class AdminStartupRepository implements AdminStartupInterface
         try {
             $dealStatus = ($request->deal_current_status == 1) ? 0 : 1;
             $this->startUpModel->find($request->startup_id)->update(['deal_status' => $dealStatus]);
+            return $this->responseJson('success', 200);
+        } catch (\RuntimeException $exception) {
+            return $this->responseJson('error', 200);
+        }
+    }
+
+    public function edit($startup_id)
+    {
+        $cities = FrontCity::select('id','city_name')->get()->toArray();
+        $sectors = FrontSector::select('id','sector_name')->get()->toArray();
+        try {
+            return view('admin.startup.edit', ['startup' => $this->startUpModel
+                ->with(['user:id,name,email','city:id'])->findOrFail($startup_id)->toArray(),
+               'cities' => $cities,
+               'all_sectors' => $sectors,
+               'startup_sectors' => DB::table('sector_startup')->whereIn('startup_id',[$startup_id])
+                                    ->pluck('sector_id')->toArray(),
+            ]);
+        } catch (ModelNotFoundException $modelNotFoundException) {
+            return redirect(route('startups.index'))->with(['error' => __('dashboard.startup_not_founded')]);
+        }
+    }
+
+    public function updateStartup($request)
+    {
+        try {
+            $requestData = $request->only(['startup_logo','startup_name','city_id']);
+            if ($request->has('startup_logo'))
+                $requestData['startup_logo'] = $this->uploadStartUpAvatar($request->startup_logo);
+
+            $stratup = $this->startUpModel->find($request->startup_id);
+            $stratup->update($requestData);
+            $stratup->sectors()->sync($request->sector_ids);
             return $this->responseJson('success', 200);
         } catch (\RuntimeException $exception) {
             return $this->responseJson('error', 200);

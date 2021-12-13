@@ -8,6 +8,8 @@ use App\Http\Requests\Web\Admin\ChangeStartupDealStatus;
 use App\Http\Requests\Web\Admin\ChangeStartupStatus;
 use App\Http\Requests\Web\Admin\StoreUserStartup;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Web\Admin\UpdateStartup;
+use Illuminate\Http\Request;
 
 class AdminStartupController extends Controller
 {
@@ -46,6 +48,16 @@ class AdminStartupController extends Controller
     public function changeStartupDealStatus(ChangeStartupDealStatus $changeStartupDealStatus)
     {
         return $this->adminStartUpInterface->changeStartupDealStatus($changeStartupDealStatus);
+    }
+
+    public function edit($startup_id)
+    {
+        return $this->adminStartUpInterface->edit($startup_id);
+    }
+
+    public function updateStartup(UpdateStartup $updateStartup)
+    {
+        return $this->adminStartUpInterface->updateStartup($updateStartup);
     }
 
 }
