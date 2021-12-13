@@ -12,4 +12,8 @@ interface AdminStartupInterface
     public function create();
 
     public function createUserStartup($request);
+
+    public function changeStartupStatus($request);
+
+    public function changeStartupDealStatus($request);
 }

@@ -41,6 +41,8 @@
                                 <th>{{__('dashboard.arabic_city_name')}}</th>
                                 <th>{{__('dashboard.english_city_name')}}</th>
                                 <th>{{__('dashboard.created_at')}}</th>
+                                <th>{{__('dashboard.status')}}</th>
+                                <th>{{__('dashboard.deal_status')}}</th>
                                 <th>{{__('dashboard.action')}}</th>
                             </tr>
                             </thead>
@@ -83,6 +85,8 @@
                     {data: 'city.city_name.ar', name: 'city.city_name.ar', orderable: false, searchable: false},
                     {data: 'city.city_name.en', name: 'city.city_name.en', orderable: false, searchable: false},
                     {data: 'created_at', name: 'created_at', orderable: false, searchable: false},
+                    {data: 'status', name: 'status', orderable: false, searchable: false},
+                    {data: 'deal_status', name: 'deal_status', orderable: false, searchable: false},
                     {data: 'action', name: 'action', orderable: false, searchable: false},
                 ]
             });
@@ -93,4 +97,6 @@
             });*/
         });
     </script>
+    @include('admin.scripts.startup.change-startup-status')
+    @include('admin.scripts.startup.change-startup-deal-status')
 @endsection

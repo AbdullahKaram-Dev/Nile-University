@@ -37,11 +37,17 @@ class AdminStartupRepository implements AdminStartupInterface
                 ->editColumn('created_at',function ($startups){
                     return $startups->created_at->diffForHumans();
                 })
+                ->editColumn('status',function ($startups){
+                    return $this->statusStartup($startups);
+                })
+                ->editColumn('deal_status',function ($startups){
+                    return $this->statusDeal($startups);
+                })
                 ->addIndexColumn()
                 ->addColumn('action', function ($startups) {
                     return $this->dropDownStartupControl($startups->id);
                 })
-                ->rawColumns(['action','startup_logo','created_at'])
+                ->rawColumns(['action','startup_logo','created_at','status','deal_status'])
                 ->make(true);
         }
         return view('admin.startup.index');
@@ -107,4 +113,42 @@ class AdminStartupRepository implements AdminStartupInterface
         }
     }
 
+    protected function statusStartup($startup)
+    {
+        $status = ($startup->status === 1) ? 'active' : 'blocked';
+        $class = ($status === "active") ? 'success' : 'danger';
+        return "<a onclick='changeStartupStatus($startup->id,$startup->status)' class='text-white badge badge-".$class."'>
+                ".$status."</a>";
+    }
+
+    protected function statusDeal($startup)
+    {
+        $status = ($startup->deal_status === 1) ? 'active' : 'blocked';
+        $class = ($status === "active") ? 'success' : 'danger';
+        return
+            "<a onclick='changeStartupDealStatus($startup->id,$startup->deal_status)' class='text-white badge badge-".$class."'>
+            ".$status."</a>";
+    }
+
+    public function changeStartupStatus($request)
+    {
+        try {
+            $newStatus = ($request->startup_current_status == 1) ? 0 : 1;
+            $this->startUpModel->find($request->startup_id)->update(['status' => $newStatus]);
+            return $this->responseJson('success', 200);
+        } catch (\RuntimeException $exception) {
+            return $this->responseJson('error', 200);
+        }
+    }
+
+    public function changeStartupDealStatus($request)
+    {
+        try {
+            $dealStatus = ($request->deal_current_status == 1) ? 0 : 1;
+            $this->startUpModel->find($request->startup_id)->update(['deal_status' => $dealStatus]);
+            return $this->responseJson('success', 200);
+        } catch (\RuntimeException $exception) {
+            return $this->responseJson('error', 200);
+        }
+    }
 }

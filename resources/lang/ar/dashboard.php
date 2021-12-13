@@ -66,4 +66,5 @@
 'select_city' => 'أختر المدينة',
 'select_sectors' => 'أختر القطاعات',
 'sorry_no_sectors_founded_you_must_create_at_least_one_before_creating_startup_click_here_to_add_sector' => 'عذرا يجب عليك اضافة قطاع قبل أنشاء ملف شركة اضغط هنا لأضافة قطاع جديد',
+'deal_status' => 'حالة الصفقات',
 ];
