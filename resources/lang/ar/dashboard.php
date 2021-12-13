@@ -76,4 +76,5 @@
 'blocked' => 'مقفول',
 'users' => 'الأعضاء',
 'users_statistics' => 'عدد الأعضاء',
+'edit_account_information' => 'تعديل بيانات الحساب',
 ];

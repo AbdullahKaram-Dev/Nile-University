@@ -76,4 +76,5 @@
 'blocked' => 'blocked',
 'users' => 'users',
 'users_statistics' => 'users statistics',
+'edit_account_information' => 'edit account information',
 ];

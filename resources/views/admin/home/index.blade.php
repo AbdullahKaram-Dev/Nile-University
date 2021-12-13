@@ -28,10 +28,10 @@
 
                     <div id="counterIcon" class="col-lg-12 layout-spacing">
                         <div class="statbox widget box box-shadow">
-                            <div class="widget-header text-center bg-light-primary">
+                            <div class="widget-header text-center bg-dark">
                                 <div class="row">
                                     <div class="col-xl-12 col-md-12 col-sm-12 col-12">
-                                        <h4>{{__('dashboard.deals_statistics')}}</h4>
+                                        <h4 class="text-white">{{__('dashboard.deals_statistics')}}</h4>
                                     </div>
                                 </div>
                             </div>
@@ -84,10 +84,10 @@
 
                     <div id="counterIcon" class="col-lg-12 layout-spacing">
                         <div class="statbox widget box box-shadow">
-                            <div class="widget-header text-center bg-light-primary">
+                            <div class="widget-header text-center bg-dark">
                                 <div class="row">
                                     <div class="col-xl-12 col-md-12 col-sm-12 col-12">
-                                        <h4>{{__('dashboard.startups_statistics')}}</h4>
+                                        <h4 class="text-white">{{__('dashboard.startups_statistics')}}</h4>
                                     </div>
                                 </div>
                             </div>
@@ -131,10 +131,10 @@
 
                     <div id="counterIcon" class="col-lg-12 layout-spacing">
                         <div class="statbox widget box box-shadow">
-                            <div class="widget-header text-center bg-light-primary">
+                            <div class="widget-header text-center bg-dark">
                                 <div class="row">
                                     <div class="col-xl-12 col-md-12 col-sm-12 col-12">
-                                        <h4>{{__('dashboard.users_statistics')}}</h4>
+                                        <h4 class="text-white">{{__('dashboard.users_statistics')}}</h4>
                                     </div>
                                 </div>
                             </div>
