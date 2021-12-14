@@ -20,7 +20,6 @@ class AdminFactory extends Factory
         return [
             'name' => $this->faker->name(),
             'email' => 'admin@gmail.com',
-            'avatar' => 'default.png',
             'password' => Hash::make(123456789),
         ];
     }

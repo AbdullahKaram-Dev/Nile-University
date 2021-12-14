@@ -77,4 +77,9 @@
 'users' => 'users',
 'users_statistics' => 'users statistics',
 'edit_account_information' => 'edit account information',
+'update_admin_information' => 'update admin information',
+'logout' => 'logout',
+'edit_deal' => 'edit deal',
+'deal_not_founded' => 'deal not founded',
+'create_deal' => 'create deal',
 ];

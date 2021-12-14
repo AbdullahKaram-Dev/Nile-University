@@ -77,4 +77,9 @@
 'users' => 'الأعضاء',
 'users_statistics' => 'عدد الأعضاء',
 'edit_account_information' => 'تعديل بيانات الحساب',
+'update_admin_information' => 'تعديل معلومات الأدمن',
+'logout' => 'تسجيل الخروج',
+'edit_deal' => 'تعديل الصفقة',
+'deal_not_founded' => 'الصفقة غير موجودة',
+'create_deal' => 'إنشاء صفقة جديدة',
 ];

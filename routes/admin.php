@@ -9,6 +9,7 @@ use App\Http\Controllers\Web\Admin\AdminUserController;
 use App\Http\Controllers\Web\Admin\AdminDealController;
 use App\Http\Controllers\Web\Admin\AdminHomeController;
 use App\Http\Controllers\AdminAuth\LoginController;
+use App\Http\Controllers\Web\Admin\AdminController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -58,6 +59,9 @@ Route::group(['prefix' => 'administration-dashboard'],function (){
 Route::get('login',[LoginController::class,'showLoginForm'])->name('admin.login');
 Route::post('login',[LoginController::class,'login'])->name('admin.submit.login');
 Route::get('logout',[LoginController::class,'logout'])->name('admin.logout');
+
+Route::get('edit-account-info',[AdminController::class,'edit'])->name('admin.edit.info');
+Route::post('update-account-info',[AdminController::class,'update'])->name('admin.update.info');
 
 });
 

@@ -12,7 +12,6 @@ use App\Models\Deal;
 class AdminDealRepository implements AdminDealInterface
 {
     use GlobalResponse;
-
     public Deal $dealModel;
     public static array $DEAL_STATUS = ['pending' => 0, 'approved' => 1, 'rejected' => 2];
 
@@ -21,7 +20,7 @@ class AdminDealRepository implements AdminDealInterface
         $this->dealModel = $dealModel;
     }
 
-    public function startupDeals($startupID): JsonResponse
+    public function startupDeals($startupID):JsonResponse
     {
         if (request()->ajax()) {
             $deals = $this->dealModel->select(['status', 'id', 'deal_name', 'deal_description', 'deal_value', 'deal_logo', 'created_at',
@@ -71,7 +70,7 @@ class AdminDealRepository implements AdminDealInterface
         }
     }
 
-    private function dropDownDealsControl($deal,$startupID): string
+    private function dropDownDealsControl($deal,$startupID):string
     {
         return '<div class="btn-group">
                 <button type="button" class="btn btn-dark btn-sm dropdown-toggle dropdown-toggle-split" id="dropdownMenuReference1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-reference="parent">' . __("dashboard.open") . '</button>
@@ -84,12 +83,12 @@ class AdminDealRepository implements AdminDealInterface
                </div>';
     }
 
-    private function getLogoDeal($deal_logo): string
+    private function getLogoDeal($deal_logo):string
     {
         return '<img src="' . asset('/storage/deal-avatar/' . $deal_logo) . '" class="img-fluid" alt="avatar">';
     }
 
-    public function changeDealStatus($request): JsonResponse
+    public function changeDealStatus($request):JsonResponse
     {
         try {
             $this->dealModel->find($request->deal_id)->update(['status' => self::$DEAL_STATUS[$request->status]]);
