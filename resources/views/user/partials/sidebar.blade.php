@@ -34,6 +34,11 @@
                         <a href="{{route('user.create.deal')}}"> create-deal </a>
                     </li>
                 </ul>
+                <ul class="collapse submenu list-unstyled" id="startup" data-parent="#accordionExample">
+                    <li>
+                        <a href="{{route('user.edit.startup')}}"> edit-startup </a>
+                    </li>
+                </ul>
             </li>
 
 

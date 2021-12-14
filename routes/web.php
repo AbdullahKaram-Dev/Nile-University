@@ -16,11 +16,14 @@ Route::get('logout',[LoginController::class,'logout'])->name('logout');
 
 
 
-Route::group(['middleware' => 'auth:web','prefix' => 'startup'],function (){
+Route::group(['middleware' => ['auth:web','BlockedStartup'],'prefix' => 'startup'],function (){
 
 Route::get('/home', [UserHomeController::class, 'index'])->name('home');
 Route::get('show-startup-info', [UserStartupController::class, 'showStartupInfo'])->name('user.show.startup');
 Route::get('deals-startup/{startup}',[UserDealController::class,'getDealStartup']);
+Route::get('edit-startup-info',[UserStartupController::class,'edit'])->name('user.edit.startup');
+Route::post('update-startup',[UserStartupController::class,'updateStartup'])->name('user.update.startup');
+
 
 Route::post('deal-delete',[UserDealController::class,'destroyDeal'])->name('user.delete.deal');
 Route::get('edit-deal/{deal}',[UserDealController::class,'editDeal'])->name('user.edit.deal');

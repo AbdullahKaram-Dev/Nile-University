@@ -82,4 +82,6 @@
 'edit_deal' => 'edit deal',
 'deal_not_founded' => 'deal not founded',
 'create_deal' => 'create deal',
+'your_account_has_been_suspended_please_contact_the_administrator' => 'your account has been suspended please contact the administrator',
+'go_back' => 'go back',
 ];

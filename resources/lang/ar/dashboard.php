@@ -82,4 +82,6 @@
 'edit_deal' => 'تعديل الصفقة',
 'deal_not_founded' => 'الصفقة غير موجودة',
 'create_deal' => 'إنشاء صفقة جديدة',
+'your_account_has_been_suspended_please_contact_the_administrator' => 'لقد تم اغلاق حسابك حاول التواصل مع المشرف',
+'go_back' => 'الرجوع للخلف',
 ];
