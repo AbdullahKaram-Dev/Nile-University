@@ -1,9 +1,11 @@
-  <div class="modal fade" id="registerModal" tabindex="-1" aria-labelledby="registerModalLabel" aria-hidden="true">
+@guest
+<div class="modal fade" id="registerModal" tabindex="-1" aria-labelledby="registerModalLabel" aria-hidden="true">
       <div class="modal-dialog modal-lg">
           <div class="modal-content">
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
                   <i class="fas fa-times"></i>
               </button>
+
               <div class="modal-body">
                   <div class="login-logo text-center">
                       <img src="{{ asset('front/images/logo.png') }}" alt="">
@@ -65,12 +67,13 @@
                           <input id="startup_logo" type="file" name="startup_logo" class="form-control">
                       </div>
 
+
                       <input type="submit" value="{{ __('dashboard.register') }}" id="submit-register">
                       <span class="forget-pass d-block text-center mt-4 mb-5">لديك حساب بالفعل؟ <a href="#"
-                              class="go-to-signup-login">تسجيل الدخول</a></span>
+                              class="go-to-signup-login">تسجيل الدخول</a>
+                      </span>
                   </form>
               </div>
-
 
               <div class="modal-body login-body">
                   <div class="login-logo text-center">
@@ -108,3 +111,4 @@
           </div>
       </div>
   </div>
+@endguest

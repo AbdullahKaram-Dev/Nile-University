@@ -32,11 +32,16 @@
                 <li class="nav-item">
                     <a class="nav-link" href="add_deals">اضافة صفقة</a>
                 </li>
+                @auth
+                <li class="nav-item">
+                    <a class="nav-link register" href="{{route('logout')}}">{{__('dashboard.logout')}}</a>
+                </li>
+                @else
                 <li class="nav-item">
                     <a class="nav-link register" href="#" data-bs-toggle="modal"
-                        data-bs-target="#registerModal">التسجيل</a>
+                       data-bs-target="#registerModal">التسجيل</a>
                 </li>
-
+                @endauth
             </ul>
         </div>
     </div>
