@@ -84,4 +84,13 @@
 'create_deal' => 'create deal',
 'your_account_has_been_suspended_please_contact_the_administrator' => 'your account has been suspended please contact the administrator',
 'go_back' => 'go back',
+'update_user_information' => 'update user information',
+'login' => 'login',
+'register' => 'register',
+'registration_in_progress_please_wait' => 'registration in progress please wait',
+'your_membership_has_been_successfully_registered_you_will_be_transferred_now' => 'your membership has been successfully registered you will be transferred now',
+'logged_in_successfully_you_will_be_transferred_now' => 'logged in successfully you will be transferred now',
+'login_in_progress_please_wait' => 'login in progress please wait',
+'login_completed_successfully_transfer_is_in_progress' => 'login completed successfully transfer is in progress',
+'registration_completed_successfully_transfer_is_in_progress' => 'registration completed successfully transfer is in progress',
 ];

@@ -8,10 +8,9 @@
 
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="customDropdown">
                         <a href="{{route('logout')}}" class="dropdown-item">{{__('dashboard.logout')}}</a>
-                        <a href="{{route('admin.edit.info')}}" class="dropdown-item">{{__('dashboard.edit_account_information')}}</a>
                     @foreach (LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
                              <a class="dropdown-item {{($localeCode == app()->getLocale()) ? 'active' : ''}}" href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}"><img src="{{asset('admin/assets/img/'.$localeCode.'.png')}}" class="flag-width w-25" alt="flag"> <span class="align-self-center">&nbsp;{{ $properties['native'] }}</span></a>
-                        @endforeach
+                    @endforeach
                     </div>
                 </div>
             </li>

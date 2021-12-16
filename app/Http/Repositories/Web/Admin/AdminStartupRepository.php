@@ -5,6 +5,7 @@ namespace App\Http\Repositories\Web\Admin;
 
 use App\Http\Interfaces\Web\Admin\AdminStartupInterface;
 use App\Models\City;
+use App\Models\Deal;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use App\Http\Traits\Web\Startup\StartUpTrait;
 use App\Http\Traits\Web\Admin\GlobalResponse;
@@ -147,6 +148,8 @@ class AdminStartupRepository implements AdminStartupInterface
     {
         try {
             $dealStatus = ($request->deal_current_status == 1) ? 0 : 1;
+            $dealStatusSingle = ($dealStatus == 0) ? 2 : 1;
+            Deal::where('startup_id',$request->startup_id)->update(['status' => $dealStatusSingle]);
             $this->startUpModel->find($request->startup_id)->update(['deal_status' => $dealStatus]);
             return $this->responseJson('success', 200);
         } catch (\RuntimeException $exception) {

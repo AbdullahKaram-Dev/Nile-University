@@ -13,7 +13,7 @@
                   </div>
 
                   <div class="alert alert-info text-center d-none" id="info-alert" role="alert">
-                      {{ __('dashboard.please_wait_your_membership_has_been_successfully_registered_and_a_confirmation_message_is_being_sent_to_your_email_and_you_will_be_transferred_after_five_seconds') }}
+                      {{ __('dashboard.your_membership_has_been_successfully_registered_you_will_be_transferred_now') }}
                   </div>
 
                   <form id="register-form" action="" class="login-form mt-5">
@@ -86,7 +86,7 @@
                   </div>
 
                   <div class="alert alert-info text-center d-none" id="success-alert" role="alert">
-                      {{ __('dashboard.please_wait_logged_in_successfully_you_will_be_transferred_after_a_few_seconds') }}
+                      {{ __('dashboard.logged_in_successfully_you_will_be_transferred_now') }}
                   </div>
 
                   <form id="login-form" class="login-form mt-5">

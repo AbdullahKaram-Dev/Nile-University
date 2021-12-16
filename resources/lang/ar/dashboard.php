@@ -84,4 +84,13 @@
 'create_deal' => 'إنشاء صفقة جديدة',
 'your_account_has_been_suspended_please_contact_the_administrator' => 'لقد تم اغلاق حسابك حاول التواصل مع المشرف',
 'go_back' => 'الرجوع للخلف',
+'update_user_information' => 'تعديل بيانات المستخدم',
+'login' => 'تسجيل الدخول',
+'register' => 'تسجيل عضوية جديدة',
+'registration_in_progress_please_wait' => 'من فضلك انتظر عملية التسجيل جارية',
+'your_membership_has_been_successfully_registered_you_will_be_transferred_now' => 'تم تسجيل عضويتك بنجاح سيتم تحويلك الآن',
+'logged_in_successfully_you_will_be_transferred_now' => 'تسجيل الدخول بنجاح سيتم نقلك الآن',
+'login_in_progress_please_wait' => 'تسجيل الدخول جاري الرجاء الانتظار',
+'login_completed_successfully_transfer_is_in_progress' => 'اكتمل تسجيل الدخول بنجاح وجاري النقل',
+'registration_completed_successfully_transfer_is_in_progress' => 'اكتمل التسجيل بنجاح ، وجاري النقل',
 ];

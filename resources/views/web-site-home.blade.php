@@ -2,7 +2,11 @@
 
 @section('content')
 
-<div class="deals">
+    <x-header-component></x-header-component>
+    <x-banner-component></x-banner-component>
+    <x-about-us></x-about-us>
+
+    <div class="deals">
     <div class="container">
         <div class="deals-head d-flex justify-content-between align-items-center">
             <div class="m-auto">
@@ -12,99 +16,30 @@
         </div>
         <div class="deals-boxes">
             <div class="row">
+                @forelse($deals as $startup)
+                @if(!empty($startup['deals']))
                 <div class="col-lg-6 mb-4">
                     <div class="deals-box">
                         <div>
-                            <img src="{{asset('front/images/products/aws.webp')}}" alt="" srcset="">
+                            <img src="{{asset('storage/deal-avatar/'.$startup['deals'][0]['deal_logo'])}}" alt="" srcset="">
                         </div>
                         <div class="w-100">
-                            <h5>ما يصل إلى 25 ألف دولار في AWS Web Hosting</h5>
-                            <p>لوريم إيبسوم(Lorem Ipsum) هو ببساطة نص شكلي (بمعنى أن الغاية هي الشكل وليس المحتوى) ويُستخدم </p>
+                            <h5>{{$startup['deals'][0]['deal_name']}}</h5>
+                            <p>{{$startup['deals'][0]['deal_description']}}</p>
                             <div class="d-flex justify-content-between">
-                                <span>$25,000</span>
-                                <a href="#">تفاصيل</a>
+                                <span>{{$startup['deals'][0]['deal_value']}}</span>
+                                <a href="{{route('web.site.show.deal',$startup['deals'][0]['id'])}}">تفاصيل</a>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-6 mb-4">
-                    <div class="deals-box">
-                        <div>
-                            <img src="{{asset('front/images/products/aws.webp')}}" alt="" srcset="">
-                        </div>
-                        <div class="w-100">
-                            <h5>ما يصل إلى 25 ألف دولار في AWS Web Hosting</h5>
-                            <p>لوريم إيبسوم(Lorem Ipsum) هو ببساطة نص شكلي (بمعنى أن الغاية هي الشكل وليس المحتوى) ويُستخدم </p>
-                            <div class="d-flex justify-content-between">
-                                <span>$25,000</span>
-                                <a href="#">تفاصيل</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 mb-4">
-                    <div class="deals-box">
-                        <div>
-                            <img src="{{asset('front/images/products/aws.webp')}}" alt="" srcset="">
-                        </div>
-                        <div class="w-100">
-                            <h5>ما يصل إلى 25 ألف دولار في AWS Web Hosting</h5>
-                            <p>لوريم إيبسوم(Lorem Ipsum) هو ببساطة نص شكلي (بمعنى أن الغاية هي الشكل وليس المحتوى) ويُستخدم </p>
-                            <div class="d-flex justify-content-between">
-                                <span>$25,000</span>
-                                <a href="#">تفاصيل</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 mb-4">
-                    <div class="deals-box">
-                        <div>
-                            <img src="{{asset('front/images/products/aws.webp')}}" alt="" srcset="">
-                        </div>
-                        <div class="w-100">
-                            <h5>ما يصل إلى 25 ألف دولار في AWS Web Hosting</h5>
-                            <p>لوريم إيبسوم(Lorem Ipsum) هو ببساطة نص شكلي (بمعنى أن الغاية هي الشكل وليس المحتوى) ويُستخدم </p>
-                            <div class="d-flex justify-content-between">
-                                <span>$25,000</span>
-                                <a href="#">تفاصيل</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 mb-4">
-                    <div class="deals-box">
-                        <div>
-                            <img src="{{asset('front/images/products/aws.webp')}}" alt="" srcset="">
-                        </div>
-                        <div class="w-100">
-                            <h5>ما يصل إلى 25 ألف دولار في AWS Web Hosting</h5>
-                            <p>لوريم إيبسوم(Lorem Ipsum) هو ببساطة نص شكلي (بمعنى أن الغاية هي الشكل وليس المحتوى) ويُستخدم </p>
-                            <div class="d-flex justify-content-between">
-                                <span>$25,000</span>
-                                <a href="#">تفاصيل</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 mb-4">
-                    <div class="deals-box">
-                        <div>
-                            <img src="{{asset('front/images/products/aws.webp')}}" alt="" srcset="">
-                        </div>
-                        <div class="w-100">
-                            <h5>ما يصل إلى 25 ألف دولار في AWS Web Hosting</h5>
-                            <p>لوريم إيبسوم(Lorem Ipsum) هو ببساطة نص شكلي (بمعنى أن الغاية هي الشكل وليس المحتوى) ويُستخدم </p>
-                            <div class="d-flex justify-content-between">
-                                <span>$25,000</span>
-                                <a href="#">تفاصيل</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                @endif
+                @empty
+
+                @endforelse
             </div>
             <div class="text-center mt-5">
-                <a href="#">عرض المزيد</a>
+                <a href="{{route('web.site.deals')}}">عرض المزيد</a>
             </div>
         </div>
     </div>

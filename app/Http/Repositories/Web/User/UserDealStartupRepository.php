@@ -133,7 +133,7 @@ class UserDealStartupRepository implements UserDealStartupInterface
             $requestData = $request->only(['deal_name', 'deal_description', 'deal_value', 'deal_logo']);
             $requestData['deal_logo'] = $this->uploadDealLogo($request->deal_logo);
             $requestData['startup_id'] = Startup::select('id')->where('user_id',auth()->user()->id)
-                                         ->first()->value('id');
+                                         ->first()->id;
             $this->dealModel->create($requestData);
             return $this->responseJson('success', 200);
         } catch (\RuntimeException $exception) {

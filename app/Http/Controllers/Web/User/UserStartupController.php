@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Web\User;
 
 use App\Http\Controllers\Controller;
 use App\Http\Interfaces\Web\User\UserStartupInterface;
+use App\Http\Requests\Web\User\UpdateAccountUser;
 use App\Http\Requests\Web\User\UpdateStartupRequest;
 use Illuminate\Http\Request;
 
@@ -30,4 +31,16 @@ class UserStartupController extends Controller
     {
         return $this->userStartupInterface->updateStartup($updateStartupRequest);
     }
+
+    public function editAccountInfo()
+    {
+        return $this->userStartupInterface->editAccountInfo();
+    }
+
+    public function updateAccount(UpdateAccountUser $updateAccountUser)
+    {
+        return $this->userStartupInterface->updateAccount($updateAccountUser);
+    }
+
+
 }

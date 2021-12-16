@@ -18,7 +18,7 @@
     <link rel="stylesheet" href="{{asset('front/css/style.css')}}">
     <!-- <link rel="stylesheet" href="assets/css/style-en.css"> -->
     <link rel="stylesheet" href="{{asset('front/css/responsive.css')}}">
- 
+
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -26,15 +26,13 @@
     @yield('css')
 </head>
 <body>
-  
+
     <x-pre-loader></x-pre-loader>
     <x-nav-bar></x-nav-bar>
 
     <x-modal-login-register></x-modal-login-register>
-    <x-header-component></x-header-component>    
-    <x-banner-component></x-banner-component>
-    <x-about-us></x-about-us> 
-       
+
+
 
     @yield('content')
 
@@ -43,7 +41,7 @@
 
 
 
-    <script src="{{asset('front/js/jquery-3.5.1.js')}}"></script>  
+    <script src="{{asset('front/js/jquery-3.5.1.js')}}"></script>
     <script src="{{asset('front/js/bootstrap.bundle.min.js')}}"></script>
     <script src="{{asset('front/js/lity.min.js')}}"></script>
     <script src="{{asset('front/js/main.js')}}"></script>

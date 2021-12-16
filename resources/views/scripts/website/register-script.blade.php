@@ -22,7 +22,7 @@
                     $("#info-alert").removeClass("d-none");
                     setTimeout(function() {
                         window.location = data.redirectUrl;
-                    }, 10000);
+                    }, 2000);
 
 
                 } else if (data.success === false) {

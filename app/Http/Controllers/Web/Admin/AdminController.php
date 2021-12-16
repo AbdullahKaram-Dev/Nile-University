@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Web\Admin\UpdateAdminInfo;
 use App\Http\Traits\Web\Admin\GlobalResponse;
 use App\Models\Admin;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 
@@ -19,7 +20,7 @@ class AdminController extends Controller
         return view('admin.account.edit',compact('adminInfo'));
     }
 
-    public function update(UpdateAdminInfo $updateAdminInfo)
+    public function update(UpdateAdminInfo $updateAdminInfo):JsonResponse
     {
         try {
             $updateData = $updateAdminInfo->only(['name','email','password']);

@@ -10,4 +10,8 @@ interface UserStartupInterface
     public function edit();
 
     public function updateStartup($request);
+
+    public function editAccountInfo();
+
+    public function updateAccount($request);
 }

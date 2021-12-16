@@ -27,7 +27,7 @@
                     <a class="nav-link" href="#">وظائف</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="deals.php">صفقات</a>
+                    <a class="nav-link" href="{{route('web.site.deals')}}">صفقات</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="add_deals">اضافة صفقة</a>

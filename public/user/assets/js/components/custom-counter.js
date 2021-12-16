@@ -133,3 +133,33 @@ $('.c-counter7').countTo({
     }
 });
 
+var value = $('.ico-counter-approve-deal-user').text();
+$('.ico-counter-approve-deal-user').countTo({
+    from: 0,
+    to: value,
+    speed: cSpeed,
+    formatter: function (value, options) {
+        return value.toFixed(options.decimals).replace(/\B(?=(?:\d{3})+(?!\d))/g, ',');
+    }
+});
+
+var value = $('.ico-counter-pending-deal-user').text();
+$('.ico-counter-pending-deal-user').countTo({
+    from: 0,
+    to: value,
+    speed: cSpeed,
+    formatter: function (value, options) {
+        return value.toFixed(options.decimals).replace(/\B(?=(?:\d{3})+(?!\d))/g, ',');
+    }
+});
+
+var value = $('.ico-counter-rejected-deal-user').text();
+$('.ico-counter-rejected-deal-user').countTo({
+    from: 0,
+    to: value,
+    speed: cSpeed,
+    formatter: function (value, options) {
+        return value.toFixed(options.decimals).replace(/\B(?=(?:\d{3})+(?!\d))/g, ',');
+    }
+});
+

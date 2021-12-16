@@ -3,15 +3,17 @@ declare(strict_types=1);
 
 namespace App\Http\Repositories\Web\User;
 
-use App\Http\Traits\Web\Admin\GlobalResponse;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use App\Http\Interfaces\Web\User\UserStartupInterface;
+use App\Http\Traits\Web\Admin\GlobalResponse;
 use App\Http\Traits\Web\Startup\StartUpTrait;
-use Illuminate\Http\JsonResponse;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Http\JsonResponse;
 use App\Models\FrontSector;
 use App\Models\FrontCity;
 use App\Models\Startup;
+use App\Models\User;
 
 class UserStartupRepository implements UserStartupInterface
 {
@@ -65,6 +67,27 @@ class UserStartupRepository implements UserStartupInterface
             return $this->responseJson('success', 200);
         } catch (\RuntimeException $exception) {
             return $this->responseJson('error', 200);
+        }
+    }
+
+    public function editAccountInfo()
+    {
+        return view('user.account.edit',['user' => User::where('id',auth()->user()->id)->first()]);
+    }
+
+    public function updateAccount($request):JsonResponse
+    {
+        try {
+            $updateData = $request->only(['name','email','password']);
+            if (!is_null($updateData['password']))
+                $updateData['password'] = Hash::make($updateData['password']);
+            else
+                unset($updateData['password']);
+            User::find(auth()->user()->id)
+                ->update($updateData);
+            return $this->responseJson('success',200);
+        }catch (\Exception $exception){
+            return $this->responseJson('error',200);
         }
     }
 }

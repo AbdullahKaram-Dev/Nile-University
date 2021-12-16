@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Spatie\Translatable\HasTranslations;
 
-class Deal extends Model
+class FrontDeal extends Model
 {
     use HasFactory,HasTranslations;
 
@@ -14,4 +14,12 @@ class Deal extends Model
     public $translatable = ['deal_name','deal_description'];
     protected $guarded = ['id'];
 
+    public function toArray()
+    {
+        $attributes = parent::toArray();
+        foreach ($this->getTranslatableAttributes() as $field) {
+            $attributes[$field] = $this->getTranslation($field, app()->getLocale());
+        }
+        return $attributes;
+    }
 }
