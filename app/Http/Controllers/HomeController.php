@@ -51,7 +51,9 @@ class HomeController extends Controller
 
     public function showDealInfo($deal_id)
     {
-        dd($deal_id);
+        $deal = FrontDeal::find($deal_id)->toArray();
+        $randomDeals = FrontDeal::with('startup')->where('status',1)->inRandomOrder()->limit(3)->get()->toArray();
+        return view('single-deal',compact('deal','randomDeals'));
     }
 
 

@@ -22,4 +22,9 @@ class FrontDeal extends Model
         }
         return $attributes;
     }
+
+    public function startup()
+    {
+        return $this->belongsTo(Startup::class);
+    }
 }
